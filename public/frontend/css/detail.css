@@ -1,0 +1,154 @@
+.margin-top{
+    margin-top: 130px !important;
+}
+.detail-thumnail{
+    width: 100%;
+}
+.wrap-detail-thumnail{
+   
+}
+.detail-thumnail{
+    padding : 44px 0;
+}
+.detail-thumnail-image{
+    width: 100%;
+    
+}
+.detail-main-image{
+    width: 100%;
+}
+.product-title{
+    display: flex;
+    flex-direction: column;
+}
+.product-title h2 {
+    text-transform: capitalize;
+    font-weight: 900;
+}
+.code-product{
+    font-size: 1.6rem;
+    padding : 10px 0;
+}
+.code-product > span {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+.status-product{
+    font-size: 1.6rem;
+    padding : 10px 0;
+}
+.status-product > b{
+    font-size: 1.4rem;
+    color: blue;
+    
+}
+.rate-product{
+    font-size: 1.6rem;
+    padding :10px 0;
+}
+.rate-product > span > i{
+    font-size: 1.4rem;
+    color: #c5ab2a;
+}
+.product-price{
+    padding : 10px 0;
+}
+.product-price > del {
+    font-size: 2rem;
+    color: black;
+}
+.detail-price-current{
+    font-size: 2rem;
+    margin-right: 16px;
+    color: red;
+}
+.product-sale{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.product-vat{
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.product-select{
+    padding : 10px 0;
+}
+.product-select-color > span {
+    font-size: 1.6rem;
+}
+.color-text{
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+.product-color-list-detail{
+    justify-content: start;
+    margin-top: 10px;
+}
+.product-select-size  {
+    padding : 10px 0;
+}
+.product-select-size > span{
+    font-size: 1.6rem;
+}
+.guild-size{
+    margin-left: 8px;
+    font-size: 1.2rem ;
+    font-weight: bold;
+    color: black;
+}
+.guild-size:hover{
+    color: #7d7d15;
+    cursor: pointer;
+}
+.list-size{
+    padding-top: 20px ;
+    display: flex;
+    justify-content: start;
+}
+.size{
+    font-size: 1.6rem;
+    margin-right: 16px;
+    cursor: pointer;
+}
+.size:hover{
+    color: #7d7d15;
+
+}
+.select-button {
+    /* margin-top: 20px; */
+    
+}
+.detail__button{
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    outline:none;
+    border: 1px solid black;
+}
+.detail__button-buy{
+    color: white;
+    background-color: black;
+    font-size: 1.8rem;
+}
+.detail__button-show-cart{
+    font-size: 1.8rem;
+}
+.detail__button-show-cart > i {
+    font-size: 1.8rem;
+    
+}
+                    /* <div class="wrap-detail-thumnail">
+
+                        <div class="detail-thumnail">
+                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+                        </div>
+                        <div class="detail-thumnail">
+                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+                        </div>
+                        <div class="detail-thumnail">
+                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+                        </div>
+                        <div class="detail-thumnail">
+                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+                        </div>
+                    </div> */

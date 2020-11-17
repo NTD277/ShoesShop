@@ -1,0 +1,124 @@
+:root {
+    --header-height: 76px;
+    --header-height-scroll: 64px;
+    --header-height-mobile: 54px;
+}
+
+* {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Quicksand', sans-serif;
+
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: black;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+h4 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    transition: 0.4s;
+}
+
+.container {
+    height: 100%;
+}
+
+.row {
+    height: 100%;
+}
+
+.xoay {
+    transform: rotate(180deg);
+}
+
+.hide {
+    display: none;
+
+}
+
+.show {
+    display: block;
+}
+
+.header__category--go-up {
+    top: var(--header-height-scroll);
+}
+
+.header__main-height--small {
+    height: var(--header-height-scroll);
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.move-left {
+    transform: translateX(0);
+}
+
+.move-right {
+    transform: translateX(0);
+}
+
+.over-flow {
+    overflow: hidden;
+}
+
+.flex {
+    display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* footer */
