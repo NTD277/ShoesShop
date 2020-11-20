@@ -21,13 +21,12 @@ class ProductController extends Controller
         $data['mess'] = $request->session()->get('mess');
         if (session('id')) {
             $data['product'] = DB::table('products')
-                ->select('products.*','brands.name as nameBrand')
-                ->join('brands','brands.id','=','products.idBrand')
+                ->select('products.*', 'brands.name as nameBrand')
+                ->join('brands', 'brands.id', '=', 'products.idBrand')
                 ->orderByDesc('products.status')
                 ->get();
             return view('backend.product.index', $data);
-        }
-        else {
+        } else {
             redirect(route('admin.login'));
         };
     }
@@ -41,39 +40,98 @@ class ProductController extends Controller
     {
 
         $brand = Brand::where('status', 1)->get();
-        return view('backend.product.create',compact('brand'));
+        $properties = DB::table('properties')
+            ->where('name', '=', 'màu')
+            ->get();
+        $propertiesSize = DB::table('properties')
+            ->where('name', '=', 'size')
+            ->get();
+        return view('backend.product.create', compact('brand', 'properties','propertiesSize'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
+
+
+        $dataImage = $request->images;
+        foreach ($dataImage as $keys =>$items)
+        {
+            $imageProduct[$keys] = $items->getClientOriginalName();
+        }
+
+//        dd($imageProduct);
+//        foreach ($imageProduct as $keys =>$items)
+//            dd($items);
+        $sum = DB::table('products')->max('id');
+//
+        foreach ($imageProduct as $keys =>$items) {
+            $upload = $dataImage->move('upload/image/product', $items);
+            dd($upload);
+        }
+//
+        $idBrand = $request->brandProduct;
         $nameProduct = $request->nameProduct;
         $slugProduct = Str::slug($nameProduct, '-');
+        $priceProduct = $request->priceProduct;
         $qtyProduct = $request->qtyProduct;
         $noteProduct = $request->noteProduct;
-        $check = Product::Where('name',$nameProduct)->get();
-        if ($check->all() == null){
-            //co the create
-            $dataInsert = [
-                'name' => $nameProduct,
+        $check = Product::Where('name', $nameProduct)->get();
+        $properties = DB::table('properties')
+            ->get();
+        $data = [];
+        foreach ($properties as $keys => $items) {
+            if ($request->get($keys + 1) == $items->detail && $items->detail != null) {
+                $data[$keys] = $items->id;
+            }
+        }
+        if ($check->all() == null) {
+            //co the tao the san pham
+            $createProduct = DB::table('products')->insert([
+                'idBrand' => $idBrand,
                 'slug' => $slugProduct,
+                'name' => $nameProduct,
+                'price' => $priceProduct,
+                'qty' => $qtyProduct,
+                'note' => $noteProduct,
                 'status' => 1,
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => null
-            ];
-            $upload = $file->move('upload/image/brand',$img);
-            if ($upload) {
-                move_uploaded_file($img, 'upload/image/brand');
-                $insert = $brand->insertDataBrand($dataInsert);
-                $request->session()->flash('mess', 'Add successful');
-                return redirect(route('admin.brand.index'));
+            ]);
+//            dd($sum);
+            // them vao bang productproperty
+            foreach ($data as $keys => $items) {
+                $createProductProperties = DB::table('productproperties')->insert([
+                    'idProduct' => $sum + 1,
+                    'idProperty' => $items,
+                    'status' => 1,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => null
+                ]);
             }
-        }else{
+            foreach ($imageProduct as $keys =>$items){
+                $createImageProducts = DB::table('image_products')->insert([
+                   'idProduct' => $sum + 1,
+                    'name' => $items,
+                    'status' => 1,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => null
+                ]);
+                $upload = $file->move('upload/image/product',$items);
+            }
+//            $upload = $file->move('upload/image/brand',$img);
+//            if ($upload) {
+//                move_uploaded_file($img, 'upload/image/brand');
+//                $insert = $brand->insertDataBrand($dataInsert);
+//                $request->session()->flash('mess', 'Add successful');
+//                return redirect(route('admin.brand.index'));
+//            }
+        } else {
             $request->session()->flash('mess', 'Add fail');
             return redirect(route('admin.brand.create'));
         }
@@ -82,7 +140,7 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -93,7 +151,7 @@ class ProductController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -104,8 +162,8 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -116,7 +174,7 @@ class ProductController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

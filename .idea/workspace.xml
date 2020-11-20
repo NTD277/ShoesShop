@@ -3,8 +3,35 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="" />
+    <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/backend/css/image-uploader.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/js/image-uploader.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/backend/js/jquery.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/dashboard/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/dashboard/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +40,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -131,21 +161,21 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/backend/product" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/backend/js" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\login\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\js" />
+      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\css" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\resources\views\backend\product" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\css" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\upload\image\brand" />
-      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\login\css" />
-      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\login\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -166,12 +196,26 @@
       <workItem from="1605061971200" duration="6849000" />
       <workItem from="1605081261391" duration="38859000" />
       <workItem from="1605405241220" duration="25055000" />
-      <workItem from="1605448267487" duration="24768000" />
+      <workItem from="1605448267487" duration="25812000" />
+      <workItem from="1605599806544" duration="21302000" />
+      <workItem from="1605838924476" duration="1636000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605581904876">
@@ -182,26 +226,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605342083496" />
+    <state x="435" y="215" key="Github.ShareDialog" timestamp="1605848371195">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="435" y="215" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1605848371195" />
     <state x="477" y="264" key="NewPhpFileDialog" timestamp="1605520355269">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1605520355269" />
-    <state x="142" y="0" key="SettingsEditor" timestamp="1604829754251">
+    <state x="142" y="0" key="SettingsEditor" timestamp="1605848518323">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1604829754251" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605848518323" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605848653146">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605848653146" />
     <state x="346" y="73" width="589" height="534" key="find.popup" timestamp="1605518485115">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="346" y="73" width="589" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1605518485115" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1605423683160">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1605585443229">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605423683160" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605446608875">
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605585443229" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605848344642">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605446608875" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605848344642" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

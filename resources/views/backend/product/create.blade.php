@@ -1,5 +1,7 @@
 @extends('backend.dashboard.index')
-
+@push('stylesheets')
+    <link type="text/css" rel="stylesheet" href="{{asset('backend/css/image-uploader.min.css')}}">
+@endpush
 @section('content')
     <div class="right">
         <div class="right__content">
@@ -37,17 +39,35 @@
                         </select>
                     </div>
                     <div class="right__inputWrapper">
+                        <label for="title">Giá</label>
+                        <input type="text" placeholder="Giá" name="priceProduct">
+                    </div>
+                    <div class="right__inputWrapper">
                         <label for="title">Số lượng</label>
                         <input type="text" placeholder="Số lượng" name="qtyProduct">
                     </div>
                     <div class="right__inputWrapper">
+                        <label>Màu</label>
+                        @foreach($properties as $keys =>$items)
+                            <input type="checkbox" name="{{$items->id}}" value="{{$items->detail}}">
+                            <lable for="{{$items->id}}">{{$items->detail}}</lable>
+                        @endforeach
+                    </div>
+                    <div class="right__inputWrapper">
+                        <label>Size</label>
+                        @foreach($propertiesSize as $keys =>$items)
+                            <input type="checkbox" name="{{$items->id}}" value="{{$items->detail}}">
+                            <lable for="{{$items->id}}">{{$items->detail}}</lable>
+                        @endforeach
+                    </div>
+                    <div class="right__inputWrapper">
                         <label for="title">Ghi chú</label>
-                        <input type="text" placeholder="Ghi chú" name="noteProduct">
+                        <input style="width: 100% !important;" type="text" placeholder="Ghi chú" name="noteProduct">
                     </div>
 
-                    <div class="right__inputWrapper">
-                        <label for="image">Hình ảnh</label>
-                        <input type="file" name="image">
+                    <div class="right__inputWrapper input-field">
+                        <label for="imageProducts">Ảnh sản phẩm</label>
+                        <div class="input-images" type="text" name="imageProducts" id="imageProducts"></div>
                     </div>
                     <button class="btn" type="submit">Thêm</button>
                 </form>
@@ -55,3 +75,11 @@
         </div>
     </div>
 @endsection
+@push('javascripts')
+    <script src="{{asset('backend/js/image-uploader.min.js')}}"></script>
+    <script type="text/javascript">
+        $(function (){
+            $('.input-images').imageUploader();
+        });
+    </script>
+@endpush
