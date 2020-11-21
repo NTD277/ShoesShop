@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use http\Env\Request;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreProductPost extends FormRequest
@@ -13,7 +14,7 @@ class StoreProductPost extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +24,27 @@ class StoreProductPost extends FormRequest
      */
     public function rules()
     {
+//        $id = $request->id;
+//        $id = is_numeric($id) && $id > 0 ? $id : 0;
         return [
-            //
+            'brandProduct'=> 'required',
+            'nameProduct' =>'required|unique:products,name|max:100',
+            'priceProduct' =>'required|numeric',
+            'qtyProduct' =>'required|numeric',
+        ];
+    }
+
+    public function messages()
+    {
+        return[
+            'brandProduct.required' =>'Tên thương hiệu không được để trống',
+            'nameProduct.required' =>'Tên sản phẩm không được để trống',
+            'nameProduct.unique' =>'Tên sản phẩm đã tồn tại',
+            'nameProduct.max' =>'Tên sản phẩm không được quá :max ký tự',
+            'priceProduct.required' =>'Giá sản phẩm không được để trống',
+            'priceProduct.numeric' =>'Giá trị của giá sản phẩm phải là số',
+            'qtyProduct.required' =>'Số lượng sản phẩm không được để trống',
+            'qtyProduct.numeric' =>'Giá trị của số lượng sản phẩm phải là số',
         ];
     }
 }

@@ -1,6 +1,8 @@
 @extends('backend.dashboard.index')
 @push('stylesheets')
     <link type="text/css" rel="stylesheet" href="{{asset('backend/css/image-uploader.min.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
+
 @endpush
 @section('content')
     <div class="right">
@@ -9,7 +11,9 @@
             <p class="right__desc">Sửa thương hiệu</p>
             <div class="right__formWrapper">
                 @if (session('mess'))
-                    <div class="alert alert-info">{{session('mess')}}</div>
+                    <div class="alert alert-info">
+                        <h3 style="text-align: center">{{session('mess')}}</h3>
+                    </div>
                 @endif
                 @if ($errors->any())
                     <div class="alert alert-danger">

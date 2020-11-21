@@ -1,12 +1,17 @@
 @extends('backend.dashboard.index')
 @section('content')
-    @push('stylesheets')
-        <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
-    @endpush
+@push('stylesheets')
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+@endpush
 <div class="right">
     <div class="right__content">
         <div class="right__title">Bảng điều khiển</div>
         <p class="right__desc">Xem danh mục</p>
+        @if (session('mess'))
+            <div class="alert alert-info">
+                <h3 style="text-align: center">{{session('mess')}}</h3>
+            </div>
+        @endif
         <div class="right__table">
 
             <div class="right__tableWrapper">

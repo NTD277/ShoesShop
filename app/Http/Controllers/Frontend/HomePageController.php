@@ -34,7 +34,13 @@ class HomePageController extends BaseController
         $route = Route::current();
         $select = $route->parameters['select'] ?? null;
         $newProduct = $this->typeOfSelect($select);
+        $image = DB::table('image_products')->select('image_products.name')
+            ->join('products','products.id','=' , 'image_products.idProduct')
+            ->get();
 //        dd($newProduct);
+//        foreach ($image as $k =>$i) {
+//            $test[$k] = $i;
+//        }
         return view('frontend.body', compact('title', 'newProduct','select'));
     }
 

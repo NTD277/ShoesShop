@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Backend;
+namespace App\Http\Controllers\
+Backend;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreProductPost;
 use App\Models\Brand;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -55,32 +57,21 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProductPost $request)
     {
-
-
-        $dataImage = $request->images;
+        $dataImage = $request->file('images');;
         foreach ($dataImage as $keys =>$items)
         {
             $imageProduct[$keys] = $items->getClientOriginalName();
+            $upload = $items->move('upload/image/product', $items->getClientOriginalName());
         }
-
-//        dd($imageProduct);
-//        foreach ($imageProduct as $keys =>$items)
-//            dd($items);
         $sum = DB::table('products')->max('id');
-//
-        foreach ($imageProduct as $keys =>$items) {
-            $upload = $dataImage->move('upload/image/product', $items);
-            dd($upload);
-        }
-//
         $idBrand = $request->brandProduct;
         $nameProduct = $request->nameProduct;
         $slugProduct = Str::slug($nameProduct, '-');
         $priceProduct = $request->priceProduct;
         $qtyProduct = $request->qtyProduct;
-        $noteProduct = $request->noteProduct;
+        $noteProduct = $request->noteProduct ?? null;
         $check = Product::Where('name', $nameProduct)->get();
         $properties = DB::table('properties')
             ->get();
@@ -103,7 +94,6 @@ class ProductController extends Controller
                 'created_at' => date('Y-m-d H:i:s'),
                 'updated_at' => null
             ]);
-//            dd($sum);
             // them vao bang productproperty
             foreach ($data as $keys => $items) {
                 $createProductProperties = DB::table('productproperties')->insert([
@@ -122,18 +112,12 @@ class ProductController extends Controller
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => null
                 ]);
-                $upload = $file->move('upload/image/product',$items);
             }
-//            $upload = $file->move('upload/image/brand',$img);
-//            if ($upload) {
-//                move_uploaded_file($img, 'upload/image/brand');
-//                $insert = $brand->insertDataBrand($dataInsert);
-//                $request->session()->flash('mess', 'Add successful');
-//                return redirect(route('admin.brand.index'));
-//            }
+            $request->session()->flash('mess', 'Thêm sản phẩm mới thành công');
+            return redirect()->route('admin.product.index');
         } else {
-            $request->session()->flash('mess', 'Add fail');
-            return redirect(route('admin.brand.create'));
+            $request->session()->flash('mess', 'Thêm sản phẩm mới không thành công');
+            return redirect(route('admin.product.create'));
         }
     }
 
@@ -156,7 +140,32 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = [];
+        $data = DB::table('products')->select('products.*','image_products.name as imageProduct','properties.name as nameProperty','properties.detail as detailProperty')
+            ->join('image_products','image_products.idProduct','=','products.id')
+            ->join('productproperties','productproperties.idProduct','=','products.id')
+            ->join('properties','properties.id','=','productproperties.idProperty')
+            ->where('products.status', 1)
+            ->where('products.id',$id)
+            ->get();
+        $nameProperty = [];
+        $detailProperty = [];
+        foreach ($data as $key => $items)
+        {
+
+            $data['id'] = $id;
+            $data['name'] = $items->name;
+            $data['image'] = $items->imageProduct;
+            $data['nameProperty'] = $items->nameProperty;
+            if ($items->nameProperty == 'Màu') {
+                $nameProperty[$key] = $items->detailProperty;
+            } else {
+                $detailProperty[$key] = $items->detailProperty;
+            }
+            $data['status'] = $items->status;
+        }
+//        dd($detailProperty);
+        return view('backend/product/edit',$data,compact('nameProperty','detailProperty'));
     }
 
     /**

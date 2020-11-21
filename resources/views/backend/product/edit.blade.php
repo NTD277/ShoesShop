@@ -18,12 +18,22 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{route('admin.brand.update',['brand' => $id])}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.product.update',['product' => 1])}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="right__inputWrapper">
                         <label for="title">Tên thương hiệu</label>
                         <input type="text" placeholder="Tên sản phẩm" name="nameBrand" value="{{$name}}">
+                    </div>
+                    <div class="right__inputWrapper">
+                        <label for="title">Tên thuộc tính</label>
+                        @foreach($nameProperty as $keys => $items)
+                        <input type="text" placeholder="Tên thuộc tính" name="nameProperty" value="{{$items}}">
+                        @endforeach
+
+                        @foreach($detailProperty as $keys => $items)
+                            <input type="text" placeholder="Tên thuộc tính" name="nameProperty" value="{{$items}}">
+                        @endforeach
                     </div>
                     <div class="right__inputWrapper">
                         <label for="image">Hình ảnh</label>
@@ -34,7 +44,7 @@
                         <label for="statusBrand">Trạng thái</label>
                         <select name="statusBrand" id="statusBrand" class="form-control">
                             <option value="1" {{ $status == 1 ? 'selected' : ''}}>Active</option>
-                            <option value="0" {{ $status == 1 ? 'selected' : ''}}>Deactive</option>
+                            <option value="0" {{ $status == 0 ? 'selected' : ''}}>Deactive</option>
                         </select>
                     </div>
                     <button class="btn" type="submit">Lưu</button>
