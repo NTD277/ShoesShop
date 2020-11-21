@@ -14,7 +14,7 @@
                         GÓP Ý &amp; KHIẾU NẠI ( 08:30 - 20:30 trừ ngày lễ)
                     </h4>
                     <a href="tel:0971600489">0971600489</a>
-                    <span>Tất cả các ngày trong tuầnn</span>
+                    <span>Tất cả các ngày trong tuần</span>
                 </div>
             </div>
         </div>
