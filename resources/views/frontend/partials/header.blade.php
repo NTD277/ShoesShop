@@ -214,10 +214,10 @@
 
                                 <div class="col col-lg-3">
                                     <div class="header__main-category-item">
-                                        @foreach($data['productHeader'] as $keys => $items)
-                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
-                                               class="header__main-category-item-link">{{$items->name}}</a>
-                                        @endforeach
+{{--                                        @foreach($data['productHeader'] as $keys => $items)--}}
+{{--                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"--}}
+{{--                                               class="header__main-category-item-link">{{$items->name}}</a>--}}
+{{--                                        @endforeach--}}
 
                                     </div>
                                 </div>
@@ -225,16 +225,16 @@
                                 <div class="col col-lg-3">
                                     <div class="header__main-category-item">
 
-                                        <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
-                                            <img class="header__main-category-item-image"
-                                                 src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/91a8a40254fe4ce6839cab6501302fd0_9366/Giay_UltraBoost_20_Mau_hong_FW8728_01_standard.jpg"
-                                                 alt="">
-                                            <span class="header__main-category-item-text">
+{{--                                        <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">--}}
+{{--                                            <img class="header__main-category-item-image"--}}
+{{--                                                 src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/91a8a40254fe4ce6839cab6501302fd0_9366/Giay_UltraBoost_20_Mau_hong_FW8728_01_standard.jpg"--}}
+{{--                                                 alt="">--}}
+{{--                                            <span class="header__main-category-item-text">--}}
 {{--                                                @foreach($newProductHeader as $keys => $items)--}}
-                                                    <span>{{$items->name}}</span>
+{{--                                                    <span>{{$items->name}}</span>--}}
 {{--                                                @endforeach--}}
-                                            </span>
-                                        </a>
+{{--                                            </span>--}}
+{{--                                        </a>--}}
                                     </div>
                                 </div>
                                 @endforeach

@@ -57,18 +57,21 @@ class ProductController extends Controller
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreProductPost $request)
+    public function store(Request $request)
     {
+        $max = DB::table('products')->max('id');
+//        dd($max);
         $dataImage = $request->file('images');;
         foreach ($dataImage as $keys =>$items)
         {
             $imageProduct[$keys] = $items->getClientOriginalName();
             $upload = $items->move('upload/image/product', $items->getClientOriginalName());
         }
-        $sum = DB::table('products')->max('id');
+
         $idBrand = $request->brandProduct;
         $nameProduct = $request->nameProduct;
         $slugProduct = Str::slug($nameProduct, '-');
+        $avatarProduct = $imageProduct[0];
         $priceProduct = $request->priceProduct;
         $qtyProduct = $request->qtyProduct;
         $noteProduct = $request->noteProduct ?? null;
@@ -87,6 +90,7 @@ class ProductController extends Controller
                 'idBrand' => $idBrand,
                 'slug' => $slugProduct,
                 'name' => $nameProduct,
+                'avatar' =>$avatarProduct,
                 'price' => $priceProduct,
                 'qty' => $qtyProduct,
                 'note' => $noteProduct,
@@ -97,7 +101,7 @@ class ProductController extends Controller
             // them vao bang productproperty
             foreach ($data as $keys => $items) {
                 $createProductProperties = DB::table('productproperties')->insert([
-                    'idProduct' => $sum + 1,
+                    'idProduct' => $max + 1,
                     'idProperty' => $items,
                     'status' => 1,
                     'created_at' => date('Y-m-d H:i:s'),
@@ -106,7 +110,7 @@ class ProductController extends Controller
             }
             foreach ($imageProduct as $keys =>$items){
                 $createImageProducts = DB::table('image_products')->insert([
-                   'idProduct' => $sum + 1,
+                   'idProduct' => $max + 1,
                     'name' => $items,
                     'status' => 1,
                     'created_at' => date('Y-m-d H:i:s'),
@@ -140,11 +144,16 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
+        $brand = DB::table('brands')->where('status',1)->get();
+        $color = DB::table('properties')->where('status',1)->where('name','màu')->get();
+        $size = DB::table('properties')->where('status',1)->where('name','size')->get();
+
         $data = [];
-        $data = DB::table('products')->select('products.*','image_products.name as imageProduct','properties.name as nameProperty','properties.detail as detailProperty')
+        $data = DB::table('products')->select('products.*','image_products.name as imageProduct','properties.name as nameProperty','properties.detail as detailProperty','brands.name as nameBrand')
             ->join('image_products','image_products.idProduct','=','products.id')
             ->join('productproperties','productproperties.idProduct','=','products.id')
             ->join('properties','properties.id','=','productproperties.idProperty')
+            ->join('brands','brands.id','=','products.idBrand')
             ->where('products.status', 1)
             ->where('products.id',$id)
             ->get();
@@ -152,20 +161,22 @@ class ProductController extends Controller
         $detailProperty = [];
         foreach ($data as $key => $items)
         {
-
             $data['id'] = $id;
+            $data['nameBrand'] = $items->nameBrand;
             $data['name'] = $items->name;
             $data['image'] = $items->imageProduct;
             $data['nameProperty'] = $items->nameProperty;
+            $data['price'] = $items->price;
+            $data['qty'] = $items->qty;
             if ($items->nameProperty == 'Màu') {
-                $nameProperty[$key] = $items->detailProperty;
+                $colorProperty[$key] = $items->detailProperty;
             } else {
-                $detailProperty[$key] = $items->detailProperty;
+                $sizeProperty[$key] = $items->detailProperty;
             }
             $data['status'] = $items->status;
         }
-//        dd($detailProperty);
-        return view('backend/product/edit',$data,compact('nameProperty','detailProperty'));
+//        dd($colorProperty);
+        return view('backend/product/edit',$data,compact('colorProperty','sizeProperty','brand','color','size'));
     }
 
     /**
@@ -175,9 +186,9 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(StoreProductPost $request, $id)
     {
-        //
+
     }
 
     /**
@@ -186,8 +197,27 @@ class ProductController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        $updateProduct = DB::table('products')
+            ->where('id', $id)
+            ->update([
+                'status' => 0,
+                'updated_at' =>date('Y-m-d H:i:s')
+            ]);
+        $updateProductProperty = DB::table('productproperties')
+            ->where('idProduct', $id)
+            ->update([
+                'status' => 0,
+                'updated_at' =>date('Y-m-d H:i:s')
+            ]);
+        if ($updateProduct && $updateProductProperty) {
+            $request->session()->flash('mess', 'Xóa thành công');
+            return redirect()->route('admin.product.index');
+        }
+        else{
+            $request->session()->flash('mess', 'Xóa không thành công');
+            return redirect()->route('admin.product.index');
+        }
     }
 }

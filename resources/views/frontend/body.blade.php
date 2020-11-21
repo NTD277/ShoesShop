@@ -319,7 +319,7 @@
                             <div class="home-product-header">
                                 <a href="/products/{{$item->slug}}" {{--href="/products/{{'this.slug'}}"--}} class="home__product-image-link">
 {{--                                    @foreach($image as $k =>$i)--}}
-                                    <img src="{{asset('upload/image/product/' . $item->imageProduct)}}" alt="fail" class="home__product-image">
+                                    <img src="{{asset('upload/image/product/' . $item->avatar)}}" alt="fail" class="home__product-image">
 {{--                                    @endforeach--}}
                                 </a>
                             </div>

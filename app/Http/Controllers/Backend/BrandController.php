@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreBrandPost as BrandPost;
+use App\Http\Requests\StoreBrandPost;
 use App\Models\Brand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -48,7 +48,7 @@ class BrandController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BrandPost $request,Brand $brand)
+    public function store(StoreBrandPost $request,Brand $brand)
     {
         $nameBrand = $request->nameBrand;
         $slug = Str::slug($nameBrand, '-');

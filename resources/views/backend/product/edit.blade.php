@@ -1,5 +1,9 @@
 @extends('backend.dashboard.index')
+@push('stylesheets')
+    <link type="text/css" rel="stylesheet" href="{{asset('backend/css/image-uploader.min.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
 
+@endpush
 @section('content')
     <div class="right">
         <div class="right__content">
@@ -18,28 +22,57 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{route('admin.product.update',['product' => 1])}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.product.update',['product' => $id])}}" method="post"
+                      enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="right__inputWrapper">
-                        <label for="title">Tên thương hiệu</label>
-                        <input type="text" placeholder="Tên sản phẩm" name="nameBrand" value="{{$name}}">
+                        <label for="nameProduct">Tên sản phẩm</label>
+                        <input type="text" placeholder="Tên sản phẩm" name="nameProduct" value="{{$name}}">
                     </div>
                     <div class="right__inputWrapper">
-                        <label for="title">Tên thuộc tính</label>
-                        @foreach($nameProperty as $keys => $items)
-                        <input type="text" placeholder="Tên thuộc tính" name="nameProperty" value="{{$items}}">
-                        @endforeach
+                        <label>Thương hiệu</label>
+                        <select class="form-control js-search-brand" id="brandProduct" name="brandProduct">
+                            <option value="{{$nameBrand}}">{{$nameBrand}}</option>
+                            @foreach($brand as $keys => $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
 
-                        @foreach($detailProperty as $keys => $items)
-                            <input type="text" placeholder="Tên thuộc tính" name="nameProperty" value="{{$items}}">
+                    <div class="right__inputWrapper">
+                        <label for="title">Màu</label>
+                        @foreach($color as $keys =>$items)
+                            @foreach($colorProperty as $key => $item)
+                                <input {{$item == $items->detail ? 'checked' : ''}} type="checkbox"
+                                       name="{{$items->detail}}" value="{{$items->detail}}">
+                                <lable for="{{$items->detail}}">{{$items->detail}}</lable>
+                            @endforeach
                         @endforeach
                     </div>
                     <div class="right__inputWrapper">
-                        <label for="image">Hình ảnh</label>
-                        <input type="file" name="imageBrand">
-                        <img width="auto" src="{{asset('upload/image/brand/' . $image)}}" >
+                        <label for="title">size</label>
+                        @foreach($size as $keys => $items)
+                            @foreach($sizeProperty as $key => $item)
+                                <input {{$item == $items->detail ? 'checked' : ''}} type="checkbox"
+                                       name="{{$items->detail}}" value="{{$items->detail}}">
+                                <lable for="{{$items->detail}}">{{$items->detail}}</lable>
+                            @endforeach
+                        @endforeach
                     </div>
+                    <div class="right__inputWrapper">
+                        <label for="title">Giá</label>
+                        <input type="text" placeholder="Giá" name="priceProduct" value="{{$price}}">
+                    </div>
+                    <div class="right__inputWrapper">
+                        <label for="title">Số lượng</label>
+                        <input type="text" placeholder="Số lượng" name="qtyProduct" value="{{$qty}}">
+                    </div>
+                    <div class="right__inputWrapper input-field">
+                        <label for="imageProducts">Ảnh sản phẩm</label>
+                        <div class="input-images has-files" type="text" name="imageProducts" id="imageProducts"></div>
+                    </div>
+
                     <div class="right__inputWrapper">
                         <label for="statusBrand">Trạng thái</label>
                         <select name="statusBrand" id="statusBrand" class="form-control">
@@ -53,3 +86,11 @@
         </div>
     </div>
 @endsection
+@push('javascripts')
+    <script src="{{asset('backend/js/image-uploader.min.js')}}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.input-images').imageUploader();
+        });
+    </script>
+@endpush

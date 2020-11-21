@@ -68,9 +68,13 @@
                         <label for="title">Ghi chú</label>
                         <input style="width: 100% !important;" type="text" placeholder="Ghi chú" name="noteProduct">
                     </div>
+                    <div class="right__inputWrapper input-field">
+                        <label for="avatarProduct">Ảnh đại diện sản phẩm</label>
+                        <div class="input-images-1" type="text" name="avatarProduct" id="avatarProduct"></div>
+                    </div>
 
                     <div class="right__inputWrapper input-field">
-                        <label for="imageProducts">Ảnh sản phẩm</label>
+                        <label for="imageProducts">Ảnh chi tiết sản phẩm</label>
                         <div class="input-images" type="text" name="imageProducts" id="imageProducts"></div>
                     </div>
                     <button class="btn" type="submit">Thêm</button>
@@ -84,6 +88,7 @@
     <script type="text/javascript">
         $(function (){
             $('.input-images').imageUploader();
+            $('.input-images-1').imageUploader();
         });
     </script>
 @endpush

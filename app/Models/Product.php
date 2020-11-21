@@ -16,13 +16,20 @@ class Product extends Model
         return $this->belongsTo('App\Model\Brand');
     }
 
-    /* Hiển thị tất cả sản phẩm */
+    /* Hiển thị thông tin tất cả sản phẩm */
     public function SelectiveDefault()
     {
-        $newProduct = DB::table('products')->select('products.*','image_products.name as imageProduct')
-            ->join('image_products','image_products.idProduct','=','products.id')
-            ->where('image_products.status',1)
+        $newProduct = DB::table('products')
+            ->where('status',1)
             ->get();
+//        $newProduct = DB::table('products')->select('products.*','image_products.name as imageProduct','properties.name as nameProperty','properties.detail as detailProperty','brands.name as nameBrand')
+//            ->join('image_products','image_products.idProduct','=','products.id')
+//            ->join('productproperties','productproperties.idProduct','=','products.id')
+//            ->join('properties','properties.id','=','productproperties.idProperty')
+//            ->join('brands','brands.id','=','products.idBrand')
+//            ->where('products.status', 1)
+//            ->distinct()
+//            ->get();
         return $newProduct;
     }
     /* Hiển thị tất cả sản phẩm theo thương hiệu*/

@@ -8,6 +8,7 @@ Route::group([
     Route::get('dashboard','DashBoardController@index')->name('dashboard');
     Route::resource('/brand','BrandController');
     Route::resource('/product','ProductController');
+    Route::resource('/import','ImportController');
 });
 
 Route::group([

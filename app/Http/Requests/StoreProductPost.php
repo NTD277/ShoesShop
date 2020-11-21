@@ -24,8 +24,6 @@ class StoreProductPost extends FormRequest
      */
     public function rules()
     {
-//        $id = $request->id;
-//        $id = is_numeric($id) && $id > 0 ? $id : 0;
         return [
             'brandProduct'=> 'required',
             'nameProduct' =>'required|unique:products,name|max:100',
@@ -39,7 +37,7 @@ class StoreProductPost extends FormRequest
         return[
             'brandProduct.required' =>'Tên thương hiệu không được để trống',
             'nameProduct.required' =>'Tên sản phẩm không được để trống',
-            'nameProduct.unique' =>'Tên sản phẩm đã tồn tại',
+            'nameProduct.unique' =>'    Tên sản phẩm đã tồn tại',
             'nameProduct.max' =>'Tên sản phẩm không được quá :max ký tự',
             'priceProduct.required' =>'Giá sản phẩm không được để trống',
             'priceProduct.numeric' =>'Giá trị của giá sản phẩm phải là số',

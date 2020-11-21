@@ -38,7 +38,7 @@
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Tiêu đề">{{$items->qty}}</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Tiêu đề">{{$items->note}}</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Sửa" class="right__iconTable"><a href="{{route('admin.product.edit',['product' => $items->id])}}"><img src="{{asset('backend/assets/icon-edit.svg')}}" alt=""></a></td>
-                        <form action="{{route('admin.brand.destroy',$items->id)}}" method="post">
+                        <form action="{{route('admin.product.destroy',$items->id)}}" method="post">
                             @csrf
                             @method('delete')
 {{--                            <td data-label="Xoá" class="right__iconTable">--}}

@@ -28,36 +28,13 @@
                     <a class="left__link" href="{{route('admin.brand.index')}}">Xem Thương Hiệu</a>
                 </div>
             </li>
-            <!-- <li class="left__menuItem">
-                <div class="left__title"><img src="assets/icon-book.svg" alt="">Thể Loại<img class="left__iconDown" src="assets/arrow-down.svg" alt=""></div>
+            <li class="left__menuItem">
+                <div class="left__title"><img src="{{asset('backend/assets/icon-edit.svg')}}" alt="">Đơn hàng nhập<img class="left__iconDown" src="{{asset('backend/assets/arrow-down.svg')}}" alt=""></div>
                 <div class="left__text">
-                    <a class="left__link" href="insert_category.html">Chèn Thể Loại</a>
-                    <a class="left__link" href="view_category.html">Xem Thể Loại</a>
+                    <a class="left__link" href="{{route('admin.import.create')}}">Thêm đơn nhâp</a>
+                    <a class="left__link" href="{{route('admin.import.index')}}">Xem đơn nhập</a>
                 </div>
             </li>
-            <li class="left__menuItem">
-                <div class="left__title"><img src="assets/icon-settings.svg" alt="">Slide<img class="left__iconDown" src="assets/arrow-down.svg" alt=""></div>
-                <div class="left__text">
-                    <a class="left__link" href="insert_slide.html">Chèn Slide</a>
-                    <a class="left__link" href="view_slides.html">Xem Slide</a>
-                </div>
-            </li>
-            <li class="left__menuItem">
-                <div class="left__title"><img src="assets/icon-book.svg" alt="">Coupons<img class="left__iconDown" src="assets/arrow-down.svg" alt=""></div>
-                <div class="left__text">
-                    <a class="left__link" href="insert_coupon.html">Chèn Coupon</a>
-                    <a class="left__link" href="view_coupons.html">Xem Coupons</a>
-                </div>
-            </li> -->
-            <li class="left__menuItem">
-                <a href="view_customers.html" class="left__title"><img src="{{asset('backend/assets/icon-users.svg')}}" alt="">Khách Hàng</a>
-            </li>
-            <li class="left__menuItem">
-                <a href="view_orders.html" class="left__title"><img src="{{asset('backend/assets/icon-book.svg')}}" alt="">Đơn Đặt Hàng</a>
-            </li>
-            <!-- <li class="left__menuItem">
-                <a href="edit_css.html" class="left__title"><img src="assets/icon-pencil.svg" alt="">Chỉnh CSS</a>
-            </li> -->
             <li class="left__menuItem">
                 <div class="left__title"><img src="{{asset('backend/assets/icon-user.svg')}}" alt="">Admin<img class="left__iconDown" src="{{asset('backend/assets/arrow-down.svg')}}" alt=""></div>
                 <div class="left__text">

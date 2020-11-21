@@ -1,5 +1,9 @@
 @extends('backend.dashboard.index')
+@push('stylesheets')
+{{--    <link type="text/css" rel="stylesheet" href="{{asset('backend/css/image-uploader.min.css')}}">--}}
+    <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
 
+@endpush
 @section('content')
     <div class="right">
         <div class="right__content">
@@ -18,7 +22,7 @@
                         </ul>
                     </div>
                 @endif
-                <form action="{{route('admin.product.store')}}" method="post" enctype="multipart/form-data">
+                <form action="{{route('admin.brand.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="right__inputWrapper">
                         <label for="title">Tên thương hiệu</label>
