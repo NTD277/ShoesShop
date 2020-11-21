@@ -49,7 +49,6 @@ class BrandController extends BaseController
         if (!$this->checkBrand($slug)){
             abort(404);
         }
-        dd($newProduct);
         return view('frontend.body', compact('title', 'newProduct','select'));
     }
 

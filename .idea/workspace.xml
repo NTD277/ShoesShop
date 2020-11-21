@@ -22,37 +22,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="1116">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ImportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/brand/adidas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/brand/nike.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-NMD-R1-V2-Coffee-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-NMD-R1-V2-Coffee-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-NMD-R1-V2-Coffee-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-NMD-R1-V2-Coffee-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-NMD-R1-V2-Coffee-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/High-Noon-Irelia-FINAL.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Nike-Revolution-5-GS-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Nike-Revolution-5-GS-02.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Nike-Revolution-5-GS-03.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Nike-Revolution-5-GS-04.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Nike-Revolution-5-GS-05.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/upload/image/product/adidas.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/BrandController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BrandController.php" afterDir="false" />
+    <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomePageController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreProductPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreProductPost.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/brand/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/brand/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/body.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/body.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backend.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -236,7 +207,7 @@
       <workItem from="1605405241220" duration="25055000" />
       <workItem from="1605448267487" duration="25812000" />
       <workItem from="1605599806544" duration="21302000" />
-      <workItem from="1605838924476" duration="36675000" />
+      <workItem from="1605838924476" duration="37062000" />
     </task>
     <task id="LOCAL-00001" summary="1116">
       <created>1605932235771</created>
@@ -259,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605933404121</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="up">
+      <created>1605974424383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605974424383</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,7 +260,8 @@
     <MESSAGE value="1116" />
     <MESSAGE value="1126" />
     <MESSAGE value="dung" />
-    <option name="LAST_COMMIT_MESSAGE" value="dung" />
+    <MESSAGE value="up" />
+    <option name="LAST_COMMIT_MESSAGE" value="up" />
   </component>
   <component name="WindowStateProjectService">
     <state x="384" y="164" key="#Notifications" timestamp="1605933230589">
@@ -293,10 +272,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1605581904876" />
-    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1605933403261">
+    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1605974423399">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605933403261" />
+    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605974423399" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1605932397738">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -317,10 +296,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605931208736" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605933411730">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605974431153">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605933411730" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605974431153" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605974374873">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
