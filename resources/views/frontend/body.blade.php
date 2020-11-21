@@ -48,21 +48,20 @@
             color: #fff;
         }
 
-        li.item-category-children {
-            font-size: 1.1rem;
-            padding: 10px 4px;
-            transition: .2s;
 
-        }
-        li.item-category-children > a{
-            font-size: 1.1rem;
-            padding: 10px 4px;
-            color: black;
-        }
-        li.item-category-children:hover {
+
+        li.item-category-children > a:hover {
+            color: white;
             background-color: #939393;
         }
-
+        li.item-category-children > a{
+            color: black;
+            font-size: 10px;
+            width: 100%;
+            display: block;
+            padding: 10px 4px;
+            transition: .2s;
+        }
         .list-category-children {
             height: 108px;
             overflow: auto;
@@ -99,21 +98,31 @@
         }
 
         .item-sort-home {
+
             border-bottom: 1px solid #00000038;
-            font-weight: 600;
+
             cursor: pointer;
-            padding: 10px 6px;
-
         }
-        .item-sort-home > a {
+
+        a.sort-link {
+            padding: 10px 6px;
             font-size: 1.3rem;
-            padding: 10px 6px;
-            color: black;
+            display: block;
+            font-weight: 600;
 
+            color: black;
         }
+
         .item-sort-home:hover {
 
-            color: rgb(158, 61, 61);
+            background-color: rgb(140, 133, 133);
+
+        }
+
+        .item-sort-home:hover>.sort-link {
+
+            color: white;
+
         }
 
         .item-sort-home:nth-child(5) {
@@ -165,6 +174,13 @@
             font-size: 1.3rem;
         }
 
+        @media (max-width:739px) {
+            .container.home {
+
+                padding-bottom: 8px;
+            }
+        }
+
         @media (max-width:1023px) {
             .home-right {
                 display: none;
@@ -206,7 +222,7 @@
                 }
             }
 
-            li.item-category-pc>div {
+            li.item-category-pc > div {
                 padding: 15px 4px;
             }
 
@@ -214,24 +230,24 @@
                 padding: 15px;
             }
 
-            .container.home {
-                background-color: #0000000f;
-                padding-bottom: 8px;
-            }
-            .home-product{
+
+            .home-product {
                 background-color: white;
                 border-radius: 0;
                 margin-top: 8px;
             }
-            .button__product-action--show-details{
+
+            .button__product-action--show-details {
                 background-color: #000;
-                color:#fff;
+                color: #fff;
             }
-            .button__product-action--add-cart{
+
+            .button__product-action--add-cart {
                 background-color: rgb(255, 65, 65);
-                color:#fff;
+                color: #fff;
             }
-            .btn__product{
+
+            .btn__product {
                 width: 88px;
             }
         }
@@ -241,9 +257,9 @@
             <img src="https://file.hstatic.net/1000003969/file/cover_0027ed617027437888fc8a07920ff30e.jpg" alt="bannermain"
                  width="100%">
         </a>
-    {{--    {{!-- <a href="#" class="mainbanner--link">--}}
-    {{--            <img src="/img/banner3.jpg" alt="" width="100%" >--}}
-    {{--        </a> --}}
+{{--        <a href="#" class="mainbanner--link">--}}
+{{--                <img src="/img/banner3.jpg" alt="" width="100%" >--}}
+{{--            </a>--}}
     </section>
 
     <div class="category-home-mobile ">
@@ -298,22 +314,22 @@
                         <ul class="list-sort-home hide">
                             @if(!empty($data['slugBrand']))
 {{--                                <li class="item-sort-home"><a href="{{route('fr.home',['select' => 'default','brand'=> $slug])}}">Mặc định</a></li>--}}
-                                <li class="item-sort-home"><a href="{{route('fr.brand',['select' => 'default','slug'=> $data['slugBrand']])}}">Mặc định</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.brand',['select' => 'uptodown','slug'=> $data['slugBrand']])}}">Giá từ cao đến thấp</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.brand',['select' => 'downtoup','slug'=> $data['slugBrand']])}}">Giá từ thấp đến cao</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.brand',['select' => 'AZ','slug'=> $data['slugBrand']])}}">A-Z</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.brand',['select' => 'ZA','slug'=> $data['slugBrand']])}}">Z-A</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'default','slug'=> $data['slugBrand']])}}">Mặc định</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'uptodown','slug'=> $data['slugBrand']])}}">Giá từ cao đến thấp</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'downtoup','slug'=> $data['slugBrand']])}}">Giá từ thấp đến cao</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'AZ','slug'=> $data['slugBrand']])}}">A-Z</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'ZA','slug'=> $data['slugBrand']])}}">Z-A</a></li>
                             @else
-                                <li class="item-sort-home"><a href="{{route('fr.home',['select' => 'default'])}}">Mặc định</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.home',['select' => 'uptodown'])}}">Giá từ cao đến thấp</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.home',['select' => 'downtoup'])}}">Giá từ thấp đến cao</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.home',['select' => 'AZ'])}}">A-Z</a></li>
-                                <li class="item-sort-home"><a href="{{route('fr.home',['select' => 'ZA'])}}">Z-A</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'default'])}}">Mặc định</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'uptodown'])}}">Giá từ cao đến thấp</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'downtoup'])}}">Giá từ thấp đến cao</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'AZ'])}}">A-Z</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'ZA'])}}">Z-A</a></li>
                             @endif
                         </ul>
                     </div>
                     @foreach($newProduct as $keys => $item)
-                    <div class="col col-lg-3 col-md-4 col-sm-6 ">
+                    <div class="col col-lg-3 col-md-4 col-sm-6 mt-24">
                         <div class="home-product">
 
                             <div class="home-product-header">

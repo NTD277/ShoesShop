@@ -23,7 +23,7 @@
                     <tr>
                         <th>STT</th>
                         <th>Tên thương hiệu</th>
-
+                        <th>Ảnh</th>
                         <th>Sửa</th>
                         <th>Xoá</th>
                     </tr>
@@ -34,6 +34,8 @@
                     <tr style="background-color: {{$items->status == 0 ? 'red' : ''}}">
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="STT">{{$keys + 1}}</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Tiêu đề">{{$items->name}}</td>
+                        <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Tiêu đề"><img
+                            src="{{asset('upload/image/brand/' . $items->image)}}"></img></td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Sửa" class="right__iconTable"><a href="{{route('admin.brand.edit',['brand' => $items->id])}}"><img src="{{asset('backend/assets/icon-edit.svg')}}" alt=""></a></td>
                         <form action="{{route('admin.brand.destroy',$items->id)}}" method="post">
                             @csrf
@@ -43,7 +45,7 @@
 {{--                                    <img src="{{asset('backend/assets/icon-trash-black.svg')}}" alt="">--}}
 {{--                                </a>--}}
 {{--                            </td>--}}
-                            <td>
+                            <td class="right__iconTable">
                                 <button type="submit"><img src="{{asset('backend/assets/icon-trash-black.svg')}}" alt=""></button>
                             </td>
                         </form>

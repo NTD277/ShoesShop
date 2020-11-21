@@ -760,7 +760,8 @@ body {
 }
 
 .right__content {
-  padding: 60px 5%;
+  padding: 20px 5%;
+    height: 100vh;
 }
 
 @media screen and (max-width: 799px) {
@@ -1033,8 +1034,10 @@ body {
 
 .right__formWrapper {
   background-color: white;
-  padding: 40px;
+  padding: 20px;
   border-radius: 5px;
+    height: 80vh;
+    overflow: auto;
 }
 
 @media screen and (max-width: 799px) {
