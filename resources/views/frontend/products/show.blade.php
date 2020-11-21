@@ -32,7 +32,7 @@
 
                 <div class="col col-lg-12">
                     <div class="detail-main-image-wrap">
-                        <img src="{{asset('frontend/img/yz700v2black.png')}}" alt="" class="detail-main-image">
+                        <img src="{{asset('upload/image/product/')}}" alt="" class="detail-main-image">
 {{--                        <p>{{$items->name}}</p>--}}
                     </div>
                 </div>

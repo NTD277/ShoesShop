@@ -19,8 +19,9 @@ class Product extends Model
     /* Hiển thị tất cả sản phẩm */
     public function SelectiveDefault()
     {
-        $newProduct = DB::table('products')
-            ->where('status',1)
+        $newProduct = DB::table('products')->select('products.*','image_products.name as imageProduct')
+            ->join('image_products','image_products.idProduct','=','products.id')
+            ->where('image_products.status',1)
             ->get();
         return $newProduct;
     }
