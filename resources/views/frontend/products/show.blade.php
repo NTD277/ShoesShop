@@ -6,27 +6,28 @@
 <div class="container margin-top">
     <div class="row">
         @foreach($newProduct as $keys => $items)
-        <div class="col col-lg-6 col-md-6">
+            <div class="col col-lg-1">
+                    @foreach($imageProduct as $k => $i)
+                        <div class="detail-main-image-wrap mbt-24">
+                            <img class="product-image-small" src="{{asset('upload/image/product/' . $i->name)}}" alt="">
+                        </div>
+                    @endforeach
+            </div>
+        <div class="col col-lg-7 col-md-7">
             <div class="row">
                 <div class="col col-lg-12">
                     <div class="detail-main-image-wrap">
                         <img src="{{asset('upload/image/product/' . $items->avatar)}}" alt="" class="detail-main-image">
                     </div>
                 </div>
-                @foreach($imageProduct as $k => $i)
-                    <div class="detail-main-image-wrap">
-                        <img style="max-height: 300px" src="{{asset('upload/image/product/' . $i->name)}}" alt="">
-                    </div>
-                @endforeach
+
             </div>
 
         </div>
-        <div class="col col-lg-6 col-md-6">
+        <div class="col col-lg-4 col-md-4">
             <div  class="product-title">
-                <h2>{{$items->name}}</h2>
-                <span class="code-product">
-                    Mã : <span>{{$items->id}}</span>
-                </span>
+                <div class="title">{{$items->name}}</div>
+                <div class="description">Chất liệu cao cấp, bền đẹp theo thời gian. Thiết kế thời trang. Kiểu dáng phong cách. Độ bền cao. Dễ phối đồ.</div>
                 @if($items->qty > 0)
                 <span class="status-product">
                     Trạng thái : <b>Còn hàng</b>
@@ -39,31 +40,39 @@
             </div>
             <div class="product-price">
                 <span class="detail-price-current">{{number_format($items->price)}} ₫</span>
-                </br>
-                </br>
+
             </div>
             <div style="display: inline" class="product-select">
                 <div class="product-select-color">
 
-                    <span>Màu sắc :</span>
-                    @foreach($colorProduct as $k => $i)
-                    <span class="color-text">{{$i->detail}}</span>
-                    @endforeach
+                    <span>Màu sắc có sẵn</span>
+                    <div class="wrapper-choose-color">
+                        @foreach($colorProduct as $k => $i)
+                        <div class="choose-color" style="background-color: {{$i->detail}}">
+
+                        </div>
+                        @endforeach
+                    </div>
                 </div>
                 <div class="product-select-size">
-                    <span>Kích thước</span>
+                    <span>Kích thước có sẵn</span>
                     <a href="/" class="guild-size">(Hướng dẫn tính size giày)</a>
-                    <ul class="list-size">
+                    <div class="wrapper-size">
                         @foreach($sizeProduct as $key =>$item)
-                            <label style="font-size: 22px">{{$item->detail}}</label>
-                            <input type="radio" name="size" value="{{$item->detail}}}}">
+                        <div class="size">
+                            <span>{{$item->detail}}</span>
+                        </div>
                         @endforeach
-                    </ul>
+                    </div>
+
                 </div>
             </div>
-            <div style="display: inline" class="select-button">
-                <button  class="detail__button detail__button-buy">MUA NGAY</button>
-                <a href="{{route('fr.cart',['id' => $items->id])}}"  class= "detail__button detail__button-show-cart"><i class="fas fa-shopping-cart"></i> XEM GIỎ HÀNG</a>
+            <div  class="select-button">
+
+                <a href="{{route('fr.cart',['id' => $items->id])}}"  class= "detail__button detail__button-buy">
+                    <span>XEM GIỎ HÀNG</span>
+                    <span class="description-button">Giao tận nhà - đổi dễ dàng</span>
+                </a>
             </div>
         </div>
         @endforeach
