@@ -23,11 +23,20 @@ window.addEventListener("DOMContentLoaded",function(){
                     item.classList.remove('black-color');
                 })
                 item.classList.add('black-color');
-                console.log('hi')
+
             }
 
         })
 
+    })
+    const productImageSmalll = document.querySelectorAll('.product-image-small');
+    const detailMainImage = document.querySelector('.detail-main-image') ;
+
+    console.log(productImageSmalll)
+    productImageSmalll.forEach(item=>{
+        item.addEventListener('click',()=>{
+            detailMainImage.src = item.src;
+        })
     })
 
 

@@ -9,15 +9,20 @@
             <div class="col col-lg-1">
                     @foreach($imageProduct as $k => $i)
                         <div class="detail-main-image-wrap mbt-24">
-                            <img class="product-image-small" src="{{asset('upload/image/product/' . $i->name)}}" alt="">
+                            <img  class="product-image-small" src="{{asset('upload/image/product/' . $i->name)}}" alt="">
                         </div>
                     @endforeach
             </div>
         <div class="col col-lg-7 col-md-7">
             <div class="row">
                 <div class="col col-lg-12">
-                    <div class="detail-main-image-wrap">
-                        <img src="{{asset('upload/image/product/' . $items->avatar)}}" alt="" class="detail-main-image">
+                    <div class="detail-main-image-wrap product-image-large">
+                        <img  src="{{asset('upload/image/product/' . $items->avatar)}}" alt="" class="detail-main-image">
+{{--                        @foreach($imageProduct as $k => $i)--}}
+
+{{--                                <img class="detail-main-image" src="{{asset('upload/image/product/' . $i->name)}}" alt="">--}}
+
+{{--                        @endforeach--}}
                     </div>
                 </div>
 

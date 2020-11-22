@@ -174,6 +174,10 @@
                         <span class="header__topbar-item-nameicon">Đăng nhập  </span>
 
                     </a>
+                    @endif
+                </li>
+                <li class="header__topbar-item">
+                    @if(!session('usernameCustomer'))
                     <a href="{{asset(route('fr.registration'))}}" class="header__topbar-item-link">
 
                         <i class="fas fa-user header__topbar-item-icon"></i>
@@ -181,6 +185,8 @@
 
                     </a>
                     @endif
+                </li>
+                <li class="header__topbar-item">
                     <a  class="header__topbar-item-link">
 
 
@@ -189,6 +195,7 @@
                         @endif
 
                     </a>
+                </li>
                 </li>
                 <li class="header__topbar-item">
                     <a href="{{route('fr.cart')}}" class="header__topbar-item-link">
