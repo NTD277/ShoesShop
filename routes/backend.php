@@ -9,7 +9,7 @@ Route::group([
         ->middleware('is.logined.admin')
         ->name('login');
     Route::post('login','LoginController@login')->name('handle.login');
-    Route::post('logout', 'LoginController@logout')->name('logout');
+    Route::get('logout', 'LoginController@logout')->name('logout');
 });
 
 Route::group([

@@ -24,9 +24,9 @@
   <component name="ChangeListManager">
     <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CartController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backend.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +173,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Backend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -211,6 +211,7 @@
       <workItem from="1605448267487" duration="25812000" />
       <workItem from="1605599806544" duration="21302000" />
       <workItem from="1605838924476" duration="66036000" />
+      <workItem from="1606055593165" duration="1267000" />
     </task>
     <task id="LOCAL-00001" summary="1116">
       <created>1605932235771</created>
@@ -331,10 +332,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606038893603" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606031146362">
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606056263644">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606031146362" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606056263644" />
     <state x="346" y="73" width="589" height="534" key="find.popup" timestamp="1605518485115">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

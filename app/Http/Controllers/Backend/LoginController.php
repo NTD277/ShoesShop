@@ -46,8 +46,7 @@ class LoginController extends Controller
     {
         $request->session()->forget('username');
         $request->session()->forget('id');
-        // unset($_SESSION['id']);
-        $request->session()->forget('email');
-        return redirect(route('backend.login'));
+        $request->session()->forget('fullname');
+        return redirect(route('admin.login'));
     }
 }

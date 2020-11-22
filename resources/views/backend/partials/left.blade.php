@@ -43,7 +43,8 @@
                 </div>
             </li>
             <li class="left__menuItem">
-                <a href="" class="left__title"><img src="{{asset('backend/assets/icon-logout.svg')}}" alt="">Đăng Xuất</a>
+                @method('post')
+                <a href="{{route('admin.logout')}}" class="left__title"><img src="{{asset('backend/assets/icon-logout.svg')}}" alt="">Đăng Xuất</a>
             </li>
         </ul>
     </div>
