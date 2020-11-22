@@ -25,22 +25,22 @@
     </header>
 
 <div class="container margin-top">
-    <div  class="row">
+    <div class="row">
         @foreach($newProduct as $keys => $items)
-        <div class="col col-lg-8 col-md-8">
+        <div class="col col-lg-6 col-md-6">
             <div class="row">
 
                 <div class="col col-lg-12">
                     <div class="detail-main-image-wrap">
                         <img src="{{asset('upload/image/product/')}}" alt="" class="detail-main-image">
-{{--                        <p>{{$items->name}}</p>--}}
+
                     </div>
                 </div>
 
             </div>
         </div>
-        <div class="col col-lg-4 col-md-4">
-            <div style="display: inline" class="product-title">
+        <div class="col col-lg-6 col-md-6">
+            <div  class="product-title">
                 <h2>{{$items->name}}</h2>
                 <span class="code-product">
                     Mã : <span>{{$items->id}}</span>
@@ -54,16 +54,16 @@
                     Trạng thái : <b>Hết hàng</b>
                 </span>
                 @endif
-                <span class="rate-product">
-                    Xếp hạng :
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                    <span><i class="fas fa-star"></i></span>
-                </span>
+{{--                <span class="rate-product">--}}
+{{--                    Xếp hạng :--}}
+{{--                    <span><i class="fas fa-star"></i></span>--}}
+{{--                    <span><i class="fas fa-star"></i></span>--}}
+{{--                    <span><i class="fas fa-star"></i></span>--}}
+{{--                    <span><i class="fas fa-star"></i></span>--}}
+{{--                    <span><i class="fas fa-star"></i></span>--}}
+{{--                </span>--}}
             </div>
-            <div style="display: inline"  class="product-price">
+            <div class="product-price">
                 <span class="detail-price-current">{{number_format($items->price)}} ₫</span>
 {{--                <del>{{docs.priceold}} ₫</del>--}}
                 </br>

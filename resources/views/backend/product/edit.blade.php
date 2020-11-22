@@ -40,15 +40,27 @@
                         </select>
                     </div>
 
+{{--                    <div class="right__inputWrapper">--}}
+{{--                        <label for="title">Màu</label>--}}
+{{--                        @foreach($color as $keys =>$items)--}}
+{{--                            @foreach($colorProperty as $key => $item)--}}
+{{--                                <input {{$item == $items->detail ? 'checked' : ''}} type="checkbox"--}}
+{{--                                       name="{{$items->detail}}" value="{{$items->detail}}">--}}
+{{--                                <lable for="{{$items->detail}}">{{$items->detail}}</lable>--}}
+{{--                            @endforeach--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
                     <div class="right__inputWrapper">
                         <label for="title">Màu</label>
-                        @foreach($color as $keys =>$items)
-                            @foreach($colorProperty as $key => $item)
-                                <input {{$item == $items->detail ? 'checked' : ''}} type="checkbox"
-                                       name="{{$items->detail}}" value="{{$items->detail}}">
-                                <lable for="{{$items->detail}}">{{$items->detail}}</lable>
+                        <select class="form-control js-search-brand" id="colorProduct" name="colorProduct">
+
+                            <option value="">--Chọn màu--</option>
+                            @foreach($properties as $keys =>$items)
+                                <div class="right-checkbox-wrapper">
+                                    <option value="{{$items->detail}}">{{$items->detail}}</option>
+                                </div>
                             @endforeach
-                        @endforeach
+                        </select>
                     </div>
                     <div class="right__inputWrapper">
                         <label for="title">size</label>

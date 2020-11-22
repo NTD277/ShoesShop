@@ -5,14 +5,14 @@
     width: 100%;
 }
 .wrap-detail-thumnail{
-   
+
 }
 .detail-thumnail{
     padding : 44px 0;
 }
 .detail-thumnail-image{
     width: 100%;
-    
+
 }
 .detail-main-image{
     width: 100%;
@@ -24,10 +24,12 @@
 .product-title h2 {
     text-transform: capitalize;
     font-weight: 900;
+    padding-bottom: 5px;
+    margin : 0;
 }
 .code-product{
     font-size: 1.6rem;
-    padding : 10px 0;
+    padding : 5px 0;
 }
 .code-product > span {
     font-size: 1.6rem;
@@ -35,23 +37,23 @@
 }
 .status-product{
     font-size: 1.6rem;
-    padding : 10px 0;
+    padding : 5px 0;
 }
 .status-product > b{
     font-size: 1.4rem;
     color: blue;
-    
+
 }
 .rate-product{
     font-size: 1.6rem;
-    padding :10px 0;
+    padding :5px 0;
 }
 .rate-product > span > i{
     font-size: 1.4rem;
     color: #c5ab2a;
 }
 .product-price{
-    padding : 10px 0;
+    padding : 5px 0;
 }
 .product-price > del {
     font-size: 2rem;
@@ -65,16 +67,18 @@
 .product-sale{
     font-size: 1.4rem;
     font-weight: bold;
+    margin-left: 15px;
 }
 .product-vat{
     font-size: 1.4rem;
     font-weight: bold;
 }
 .product-select{
-    padding : 10px 0;
+    padding : 5px 0;
 }
 .product-select-color > span {
     font-size: 1.6rem;
+    padding : 5px 0;
 }
 .color-text{
     font-size: 1.6rem;
@@ -85,7 +89,7 @@
     margin-top: 10px;
 }
 .product-select-size  {
-    padding : 10px 0;
+    padding : 5px 0;
 }
 .product-select-size > span{
     font-size: 1.6rem;
@@ -115,8 +119,9 @@
 
 }
 .select-button {
-    /* margin-top: 20px; */
-    
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .detail__button{
     width: 100%;
@@ -124,31 +129,32 @@
     margin-bottom: 10px;
     outline:none;
     border: 1px solid black;
+    border-radius: 5px;
 }
 .detail__button-buy{
     color: white;
     background-color: black;
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 .detail__button-show-cart{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 .detail__button-show-cart > i {
     font-size: 1.8rem;
-    
-}
-                    /* <div class="wrap-detail-thumnail">
 
-                        <div class="detail-thumnail">
-                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
-                        </div>
-                        <div class="detail-thumnail">
-                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
-                        </div>
-                        <div class="detail-thumnail">
-                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
-                        </div>
-                        <div class="detail-thumnail">
-                            <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
-                        </div>
-                    </div> */
+}
+/* <div class="wrap-detail-thumnail">
+
+    <div class="detail-thumnail">
+        <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+    </div>
+    <div class="detail-thumnail">
+        <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+    </div>
+    <div class="detail-thumnail">
+        <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+    </div>
+    <div class="detail-thumnail">
+        <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
+    </div>
+</div> */

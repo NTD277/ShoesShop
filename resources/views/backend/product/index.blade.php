@@ -46,7 +46,7 @@
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Tên">{{$items->name}}</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Thương hiệu">{{$items->nameBrand}}</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Hình ảnh"><img src="{{asset('upload/image/product/' . $items->avatar)}}" class="admin-product-image"></td>
-                        <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Gía">{{$items->price}}</td>
+                        <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Gía">{{number_format($items->price)}} ₫</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Số lượng">{{$items->qty}}</td>
                         <td style="color: {{$items->status == 0 ? 'white' : ''}} !important;> data-label="Sửa" class="right__iconTable"><a href="{{route('admin.product.edit',['product' => $items->id])}}"><img src="{{asset('backend/assets/icon-edit.svg')}}" alt=""></a></td>
                         <form action="{{route('admin.product.destroy',$items->id)}}" method="post">

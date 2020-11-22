@@ -343,7 +343,7 @@
                             <div class="home-product-content">
                                 <a href="/products/{{$item->slug}}" class="home-product-name">{{$item->name}}</a>
                                 <div class="home-product-price">
-                                    <span class="home-product-price--current">{{$item->price}} ₫ </span>
+                                    <span class="home-product-price--current">{{number_format($item->price)}} ₫ </span>
     {{--                                <span class="home-product-price--old">{{'this.priceold'}} ₫</span>--}}
                                 </div>
 

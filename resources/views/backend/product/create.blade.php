@@ -66,15 +66,26 @@
                         <input type="text" placeholder="Số lượng" name="qtyProduct">
                     </div>
                     <div class="right__inputWrapper">
-                        <label>Chọn màu</label>
-                        @foreach($properties as $keys =>$items)
-                            <div class="right-checkbox-wrapper">
+                        <label for="title">Chọn màu</label>
+                        <select class="form-control js-search-brand" id="colorProduct" name="colorProduct">
 
-                                <input type="checkbox" name="{{$items->id}}" value="{{$items->detail}}">
-                                <lable for="{{$items->id}}">{{$items->detail}}</lable>
-                            </div>
-                        @endforeach
+                            <option value="">--Chọn màu--</option>
+                            @foreach($properties as $keys =>$items)
+                                <div class="right-checkbox-wrapper">
+                                    <option value="{{$items->detail}}">{{$items->detail}}</option>
+                                </div>
+                            @endforeach
+                        </select>
                     </div>
+{{--                    <div class="right__inputWrapper">--}}
+{{--                        <label>Chọn màu</label>--}}
+{{--                        @foreach($properties as $keys =>$items)--}}
+{{--                            <div class="right-checkbox-wrapper">--}}
+{{--                                <input type="checkbox" name="{{$items->id}}" value="{{$items->detail}}">--}}
+{{--                                <lable for="{{$items->id}}">{{$items->detail}}</lable>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
                     <div class="right__inputWrapper">
                         <label>Chọn size</label>
 
