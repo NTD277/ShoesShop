@@ -319,6 +319,12 @@
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'downtoup','slug'=> $data['slugBrand']])}}">Giá từ thấp đến cao</a></li>
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'AZ','slug'=> $data['slugBrand']])}}">A-Z</a></li>
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.brand',['select' => 'ZA','slug'=> $data['slugBrand']])}}">Z-A</a></li>
+                            @elseif(!empty($data['slugColor']))
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'default','detailColor'=> $data['slugColor']])}}">Mặc định</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'uptodown','detailColor'=> $data['slugColor']])}}">Giá từ cao đến thấp</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'downtoup','detailColor'=> $data['slugColor']])}}">Giá từ thấp đến cao</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'AZ','detailColor'=> $data['slugColor']])}}">A-Z</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'ZA','detailColor'=> $data['slugColor']])}}">Z-A</a></li>
                             @else
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'default'])}}">Mặc định</a></li>
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'uptodown'])}}">Giá từ cao đến thấp</a></li>

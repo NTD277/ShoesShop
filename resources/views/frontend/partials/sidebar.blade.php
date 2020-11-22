@@ -7,6 +7,7 @@
                 <i class="fas fa-chevron-down"></i>
             </div>
             <ul class="list-category-children hide">
+                @if(!empty($data['newBrand']))
                 @foreach($data['newBrand'] as $keys => $items)
                     <li class="item-category-children">
                         <a href="{{route('fr.brand',['slug'=> $items->slug,'select'=>$data['select']])}}">
@@ -15,6 +16,7 @@
                         </a>
                     </li>
                 @endforeach
+                @endif
             </ul>
         </li>
         <li class="item-category-pc">
@@ -22,15 +24,16 @@
                 <div><i class="fas fa-palette"></i>Màu sắc</div> <i class="fas fa-chevron-down"></i>
             </div>
             <ul class="list-category-children hide">
-                <li class="item-category-children">Đỏ</li>
-                <li class="item-category-children">Cam</li>
-                <li class="item-category-children">Vàng</li>
-                <li class="item-category-children">Lục</li>
-                <li class="item-category-children">Lam</li>
-                <li class="item-category-children">Tràm</li>
-                <li class="item-category-children">Tìm</li>
-                <li class="item-category-children">Trắng</li>
-                <li class="item-category-children">Đen</li>
+                @foreach($data['color'] as $keys => $items)
+                    <li class="item-category-children">
+                        <a href="{{route('fr.color',['detailColor'=> $items->detail,'select'=>$data['select']])}}">
+                            {{$items->detail}}
+{{--                            @if($items->detail == 'Green')--}}
+{{--                                Xanh--}}
+{{--                            @endif--}}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
         </li>
         <li class="item-category-pc">
@@ -38,17 +41,13 @@
                 <div><i class="fas fa-sitemap"></i>Kích cỡ</div> <i class="fas fa-chevron-down"></i>
             </div>
             <ul class="list-category-children hide">
-
-                <li class="item-category-children">36</li>
-                <li class="item-category-children">37</li>
-                <li class="item-category-children">38</li>
-                <li class="item-category-children">39</li>
-                <li class="item-category-children">40</li>
-                <li class="item-category-children">41</li>
-                <li class="item-category-children">42</li>
-                <li class="item-category-children">43</li>
-                <li class="item-category-children">44</li>
-                <li class="item-category-children">45</li>
+                @foreach($data['size'] as $keys => $items)
+                    <li class="item-category-children">
+                        <a href="{{route('fr.size',['detailSize'=> $items->detail,'select'=>$data['select']])}}">
+                            {{$items->detail}}
+                        </a>
+                    </li>
+                @endforeach
             </ul>
         </li>
         <li class="item-category-pc">

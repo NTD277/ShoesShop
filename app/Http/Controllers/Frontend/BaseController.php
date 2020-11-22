@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
 use App\Models\Product;
+use App\Models\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
@@ -35,8 +36,11 @@ class BaseController extends Controller
         $data = [];
         $route = Route::current();
         $data['slugBrand'] = $route->parameters['slug'] ?? '';
+        $data['slugColor'] = $route->parameters['detailColor'] ?? '';
         $data['select'] = $route->parameters['select'] ?? '';
         $data['newBrand'] = Brand::where('status',1)->get();
+        $data['color'] = Property::where('status',1)->where('name','Màu')->get();
+        $data['size'] = Property::where('status',1)->where('name','size')->get();
         $data['productHeader'] = $product->SelectByNumber(5,'adidas');
         View::share('data',$data);
     }

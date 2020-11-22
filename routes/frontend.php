@@ -2,7 +2,6 @@
 
 Route::group([
     'namespace' => 'Frontend',
-//    'prefix' => 'w',
     'as' => 'fr.'
 ],function (){
     /*Home page*/
@@ -14,6 +13,9 @@ Route::group([
     Route::get('/products/{slug}','ProductController@index')->name('detail');
 
     Route::get('brand/{slug}/{select?}','BrandController@index')->name('brand');
+
+    Route::get('color/{detailColor}/{select?}','ColorController@index')->name('color');
+    Route::get('size/{detailSize}/{select?}','SizeController@index')->name('size');
 });
 
 Route::group([

@@ -149,4 +149,97 @@ class Product extends Model
         return $newProduct;
     }
 
+
+
+
+// ///////////////////////////////////   COLOR/////////////////////
+    public function UpToDownColor($color = null)
+    {
+        $newProduct = [];
+        if (empty($color)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderByDesc('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'Màu')
+                ->where('products.status', 1)
+                ->where('properties.detail', $color)
+                ->orderByDesc('products.price')
+                ->get();
+        }
+        return $newProduct;
+    }
+
+
+    public function DownToUpColor($color = null)
+    {
+        $newProduct = [];
+        if (empty($color)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderBy('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'Màu')
+                ->where('products.status', 1)
+                ->where('properties.detail', $color)
+                ->orderBy('products.price')
+                ->get();
+        }
+        return $newProduct;
+    }
+
+    public function ZToAColor($color = null)
+    {
+        $newProduct = [];
+        if (empty($color)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderByDesc('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'Màu')
+                ->where('products.status', 1)
+                ->where('properties.detail', $color)
+                ->orderByDesc('products.name')
+                ->get();
+        }
+        return $newProduct;
+    }
+
+
+    public function AToZColor($color = null)
+    {
+        $newProduct = [];
+        if (empty($color)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderBy('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'Màu')
+                ->where('products.status', 1)
+                ->where('properties.detail', $color)
+                ->orderBy('products.name')
+                ->get();
+        }
+        return $newProduct;
+    }
 }

@@ -23,10 +23,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ColorController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/SizeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/body.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/body.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/frontend.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +215,7 @@
       <workItem from="1605448267487" duration="25812000" />
       <workItem from="1605599806544" duration="21302000" />
       <workItem from="1605838924476" duration="66036000" />
-      <workItem from="1606055593165" duration="1267000" />
+      <workItem from="1606055593165" duration="7340000" />
     </task>
     <task id="LOCAL-00001" summary="1116">
       <created>1605932235771</created>
@@ -262,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606038887246</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="logout admin">
+      <created>1606056986131</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1606056986131</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,21 +300,22 @@
     <MESSAGE value="xong tạm dao riện index front" />
     <MESSAGE value="update detailproduct" />
     <MESSAGE value="update detailproduct p2" />
-    <option name="LAST_COMMIT_MESSAGE" value="update detailproduct p2" />
+    <MESSAGE value="logout admin" />
+    <option name="LAST_COMMIT_MESSAGE" value="logout admin" />
   </component>
   <component name="WindowStateProjectService">
     <state x="384" y="164" key="#Notifications" timestamp="1605933230589">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="384" y="164" key="#Notifications/0.0.1280.680@0.0.1280.680" timestamp="1605933230589" />
-    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1605581904876">
+    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606061862844">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1605581904876" />
-    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1606038886268">
+    <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606061862844" />
+    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1606056985372">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606038886268" />
+    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606056985372" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1606022664408">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -328,14 +340,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605931208736" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606038893603">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606056992655">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606038893603" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606056263644">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606056992655" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606061301188">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606056263644" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606061301188" />
     <state x="346" y="73" width="589" height="534" key="find.popup" timestamp="1605518485115">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -354,7 +366,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php</url>
-          <line>258</line>
+          <line>267</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
