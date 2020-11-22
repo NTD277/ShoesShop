@@ -473,7 +473,8 @@ span.header__main-category-item-text {
     overflow: hidden;
     text-overflow: ellipsis;
     overflow: hidden;
-    white-space: nowrap
+    white-space: nowrap;
+    padding: 0 4px;
 }
 
 .home-product-name:hover {
@@ -673,6 +674,6 @@ span.header__main-category-item-text {
 .footer-bot {
     padding: 26px 0;
 }
-.mt-bt24 {
+.mbt-24 {
     margin-bottom: 24px;
 }

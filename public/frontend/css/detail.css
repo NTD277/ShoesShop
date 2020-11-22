@@ -16,16 +16,24 @@
 }
 .detail-main-image{
     width: 100%;
+    border: 1px solid #e0e0e0;
 }
 .product-title{
     display: flex;
     flex-direction: column;
 }
-.product-title h2 {
+.product-title .title {
     text-transform: capitalize;
-    font-weight: 900;
-    padding-bottom: 5px;
-    margin : 0;
+    font-weight: 300;
+    margin-bottom: 30px;
+    /*margin : 0;*/
+    font-size: 32px;
+    line-height: 41px;
+}
+.description{
+    font-size:12px ;
+    margin-bottom: 20px;
+    color:#908484;
 }
 .code-product{
     font-size: 1.6rem;
@@ -53,7 +61,9 @@
     color: #c5ab2a;
 }
 .product-price{
-    padding : 5px 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
 }
 .product-price > del {
     font-size: 2rem;
@@ -79,6 +89,7 @@
 .product-select-color > span {
     font-size: 1.6rem;
     padding : 5px 0;
+    display: block;
 }
 .color-text{
     font-size: 1.6rem;
@@ -97,11 +108,11 @@
 .guild-size{
     margin-left: 8px;
     font-size: 1.2rem ;
-    font-weight: bold;
-    color: black;
+    /*font-weight: bold;*/
+    color:#908484;
 }
 .guild-size:hover{
-    color: #7d7d15;
+    color: black;
     cursor: pointer;
 }
 .list-size{
@@ -129,12 +140,23 @@
     margin-bottom: 10px;
     outline:none;
     border: 1px solid black;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
 }
 .detail__button-buy{
     color: white;
-    background-color: black;
-    font-size: 1.5rem;
+    background-color: #111114;
+    font-size: 2.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+}
+.description-button{
+    font-size: 1rem;
+    /* padding: 4px; */
+    display: block;
+    margin-top: 7px;
 }
 .detail__button-show-cart{
     font-size: 1.5rem;
@@ -158,3 +180,52 @@
         <img src="{{docs.image}}" alt="" class="detail-thumnail-image">
     </div>
 </div> */
+.product-image-small{
+    width: 70px;
+    border: 1px solid #e0e0e0;
+}
+.product-image-small:hover{
+    border: 1px solid #9E9E9E;
+    cursor: pointer;
+}
+.choose-color{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    border-radius: 3px;
+}
+.wrapper-choose-color:hover{
+    border-color:black ;
+
+}
+.wrapper-choose-color{
+    width: 50px;
+    height: 30px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+.wrapper-size{
+    display: flex;
+}
+.size{
+    width: 50px;
+    height: 30px;
+    border: 1px solid #e0e0e0;
+    cursor: pointer;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    font-size: 20px;
+}
+.size:hover{
+    border-color: black;
+}

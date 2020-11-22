@@ -189,10 +189,10 @@
                     </a>
                 </li>
                 <li class="header__topbar-item">
-                    <a href="#" class="header__topbar-item-link">
+                    <a href="{{route('fr.cart')}}" class="header__topbar-item-link">
 
                         <i class="fas fa-shopping-cart header__topbar-item-icon"></i>
-                        <span class="header__topbar-item-nameicon"><a href="{{route('fr.cart')}}">Giỏ hàng</a></span>
+                        <span class="header__topbar-item-nameicon">Giỏ hàng</span>
                         <span class="header__topbar-item-count">(0)</span>
                     </a>
                 </li>

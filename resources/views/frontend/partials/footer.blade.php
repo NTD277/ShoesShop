@@ -10,7 +10,7 @@
                     <span>Tất cả các ngày trong tuần</span>
                 </div>
                 <div class="footer__info-bellow">
-                    <h4> `
+                    <h4>
                         GÓP Ý &amp; KHIẾU NẠI ( 08:30 - 20:30 trừ ngày lễ)
                     </h4>
                     <a href="tel:0971600489">0971600489</a>

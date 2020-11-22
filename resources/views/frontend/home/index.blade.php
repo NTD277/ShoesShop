@@ -16,7 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/responsive.css')}}">
 {{--    @stack('stylesheets')--}}
 {{--    {{!-- <link rel="stylesheet" href="/css/admin.css"> --}}
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" type="text/css" href="{{asset('frontend/font/fontawesome-free-5.14.0-web/css/all.min.css')}}">
 
 </head>
