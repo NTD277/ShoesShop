@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded",function(){
                     item.classList.remove('black-color');
                 })
                 item.classList.add('black-color');
+                console.log('hi')
             }
 
         })
