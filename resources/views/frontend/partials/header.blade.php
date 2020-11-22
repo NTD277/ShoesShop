@@ -167,6 +167,7 @@
             <ul class="header__topbar-list">
 
                 <li class="header__topbar-item">
+                    @if(!session('usernameCustomer'))
                     <a href="{{asset(route('fr.login'))}}" class="header__topbar-item-link">
 
                         <i class="fas fa-user header__topbar-item-icon"></i>
@@ -179,11 +180,12 @@
                         <span class="header__topbar-item-nameicon">Đăng ký</span>
 
                     </a>
+                    @endif
                     <a  class="header__topbar-item-link">
 
-                        <span class="header__topbar-item-nameicon">hello</span>
+
                         @if(session('idCustomer'))
-                            <span class="header__topbar-item-nameicon">hello {{session('usernameCustomer')}}</span>
+                            <span class="header__topbar-item-nameicon"><i class="fas fa-user header__topbar-item-icon"></i> {{session('usernameCustomer')}}</span>
                         @endif
 
                     </a>
