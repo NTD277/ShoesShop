@@ -36,22 +36,11 @@
                     Trạng thái : <b>Hết hàng</b>
                 </span>
                 @endif
-{{--                <span class="rate-product">--}}
-{{--                    Xếp hạng :--}}
-{{--                    <span><i class="fas fa-star"></i></span>--}}
-{{--                    <span><i class="fas fa-star"></i></span>--}}
-{{--                    <span><i class="fas fa-star"></i></span>--}}
-{{--                    <span><i class="fas fa-star"></i></span>--}}
-{{--                    <span><i class="fas fa-star"></i></span>--}}
-{{--                </span>--}}
             </div>
             <div class="product-price">
                 <span class="detail-price-current">{{number_format($items->price)}} ₫</span>
-{{--                <del>{{docs.priceold}} ₫</del>--}}
                 </br>
                 </br>
-{{--                <span class="product-sale">Giảm 19%</span>--}}
-{{--                <span class="product-vat">(Đã bao gồm VAT)</span>--}}
             </div>
             <div style="display: inline" class="product-select">
                 <div class="product-select-color">
@@ -65,9 +54,9 @@
                     <span>Kích thước</span>
                     <a href="/" class="guild-size">(Hướng dẫn tính size giày)</a>
                     <ul class="list-size">
-                        @foreach($sizeProduct as $keys =>$items)
-                            <label style="font-size: 22px">{{$items->detail}}</label>
-                            <input type="radio" name="size" value="{{$items->detail}}}}">
+                        @foreach($sizeProduct as $key =>$item)
+                            <label style="font-size: 22px">{{$item->detail}}</label>
+                            <input type="radio" name="size" value="{{$item->detail}}}}">
                         @endforeach
                     </ul>
                 </div>

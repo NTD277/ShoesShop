@@ -68,6 +68,7 @@
                                 </thead>
 
                                 <tbody>
+
                                 <tr>
                                     @foreach(session('cart') as $keys => $items)
                                         <td data-label="STT">

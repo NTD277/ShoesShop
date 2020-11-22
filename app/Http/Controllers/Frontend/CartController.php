@@ -14,6 +14,7 @@ class CartController extends Controller
         $infoProduct= DB::table('products')->select('products.*')
             ->where('id' , '=',$idProduct)->get();
         $request->session()->put('cart', $infoProduct);
+//        session(['cart' => $infoProduct]);
         return view('frontend.cart.index');
     }
 }
