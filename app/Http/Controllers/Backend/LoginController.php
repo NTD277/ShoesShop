@@ -11,35 +11,32 @@ class LoginController extends Controller
 {
     public function index(Request $request)
     {
-        $data = [];
-        $data['message'] = $request->session()->get('session_login');
-        // $data['message'] = $_SESSION['session_login'] ?? '';
-        return view('backend.login.index', $data);
+//        $data = [];
+//        $data['message'] = $request->session()->get('session_login');
+//        return view('backend.login.index', $data);
+
+        $msgErr = $request->session()->get('errAdminLogin');
+        return view('backend.login.index', compact('msgErr'));
     }
 
-    public function handleLogin(
+    public function login(
         LoginPost $request,
         Admin $admin
     ) {
+//        dd($request->session()->all());
         $username = $request->username;
-
         $password = $request->password;
         $infoAdmin = $admin->checkAdminLogin($username, $password);
         if($infoAdmin){
             // luu thong tin cua user vao session, de tien cho cac cong viec xu ly sau nay
             $request->session()->put('username', $infoAdmin['username']);
-            // $_SESSION['username'] = $infoAdmin['username']
             $request->session()->put('id', $infoAdmin['id']);
             $request->session()->put('fullname', $infoAdmin['fullname']);
-
-            // cap nhat lai last_login trong db
-//            $admin->updateLastLogin($infoAdmin['id']);
             // cho vao trang dashboard
             return redirect(route('admin.dashboard'));
         } else {
-            // tao ra session flash de thong bao loi
             // quay ve lai trang login
-            $request->session()->flash('session_login', 'Username hoac mat khau khong dung');
+            $request -> session() ->flash('errAdminLogin','username or password invalid');
             return redirect(route('admin.login'));
         }
 
@@ -47,8 +44,6 @@ class LoginController extends Controller
 
     public function logout(Request $request)
     {
-        // xoa het session
-        // quay ve form login
         $request->session()->forget('username');
         $request->session()->forget('id');
         // unset($_SESSION['id']);

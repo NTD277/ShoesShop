@@ -16,3 +16,12 @@ Route::group([
     Route::get('brand/{slug}/{select?}','BrandController@index')->name('brand');
 });
 
+Route::group([
+    'namespace' => 'Frontend',
+    'as' => 'fr.'
+],function (){
+    Route::get('/registration','LoginController@registration')->name('registration');
+    Route::get('/handle-registration','LoginController@handleRegistration')->name('handle.registration');
+    Route::get('/login','LoginController@index')->name('login');
+    Route::get('/handle-login','LoginController@handleLogin')->name('handle.login');
+});

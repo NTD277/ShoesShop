@@ -110,7 +110,7 @@ class Product extends Model
     }
 
     /* Hiển thị tất cả sản phẩm Z-A*/
-    public function ZToA()
+    public function ZToA($slugBrand = null)
     {
         if (empty($slugBrand)){
             $newProduct = DB::table('products')
@@ -123,14 +123,14 @@ class Product extends Model
                 ->join('products', 'brands.id', '=', 'products.idBrand')
                 ->where('products.status', 1)
                 ->where('brands.slug', $slugBrand)
-                ->orderByDesc('name')
+                ->orderByDesc('products.name')
                 ->get();
         }
         return $newProduct;
     }
 
     /* Hiển thị tất cả sản phẩm A-Z*/
-    public function AToZ()
+    public function AToZ($slugBrand = null)
     {
         if (empty($slugBrand)){
             $newProduct = DB::table('products')
@@ -143,18 +143,10 @@ class Product extends Model
                 ->join('products', 'brands.id', '=', 'products.idBrand')
                 ->where('products.status', 1)
                 ->where('brands.slug', $slugBrand)
-                ->orderBy('name')
+                ->orderBy('products.name')
                 ->get();
         }
         return $newProduct;
     }
 
-//    public function countProduct()
-//    {
-//        $newProduct = DB::table('product')
-//            ->count('name')
-//            ->where('status',1)
-//            ->get();
-//        return $newProduct;
-//    }
 }

@@ -29,15 +29,18 @@
         @foreach($newProduct as $keys => $items)
         <div class="col col-lg-6 col-md-6">
             <div class="row">
-
                 <div class="col col-lg-12">
                     <div class="detail-main-image-wrap">
-                        <img src="{{asset('upload/image/product/')}}" alt="" class="detail-main-image">
-
+                        <img src="{{asset('upload/image/product/' . $items->avatar)}}" alt="" class="detail-main-image">
                     </div>
                 </div>
-
+                @foreach($imageProduct as $k => $i)
+                    <div class="detail-main-image-wrap">
+                        <img style="max-height: 300px" src="{{asset('upload/image/product/' . $i->name)}}" alt="">
+                    </div>
+                @endforeach
             </div>
+
         </div>
         <div class="col col-lg-6 col-md-6">
             <div  class="product-title">
@@ -68,24 +71,25 @@
 {{--                <del>{{docs.priceold}} ₫</del>--}}
                 </br>
                 </br>
-                <span class="product-sale">Giảm 19%</span>
-                <span class="product-vat">(Đã bao gồm VAT)</span>
+{{--                <span class="product-sale">Giảm 19%</span>--}}
+{{--                <span class="product-vat">(Đã bao gồm VAT)</span>--}}
             </div>
             <div style="display: inline" class="product-select">
                 <div class="product-select-color">
 
                     <span>Màu sắc :</span>
-                    <span class="color-text">Trắng</span>
-
+                    @foreach($colorProduct as $k => $i)
+                    <span class="color-text">{{$i->detail}}</span>
+                    @endforeach
                 </div>
                 <div class="product-select-size">
                     <span>Kích thước</span>
                     <a href="/" class="guild-size">(Hướng dẫn tính size giày)</a>
                     <ul class="list-size">
-                        <li class="size">35</li>
-                        <li class="size">36</li>
-                        <li class="size">37</li>
-                        <li class="size">38</li>
+                        @foreach($sizeProduct as $keys =>$items)
+                            <label style="font-size: 22px">{{$items->detail}}</label>
+                            <input type="radio" name="size" value="{{$items->detail}}}}">
+                        @endforeach
                     </ul>
                 </div>
             </div>

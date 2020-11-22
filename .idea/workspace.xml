@@ -23,7 +23,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomePageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/HomePageController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/LoginController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Middleware/IsLoginedAdmin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/LoginCustomerPost.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-Ultraboost-20-W-01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-Ultraboost-20-W-02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-Ultraboost-20-W-03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-Ultraboost-20-W-04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/upload/image/product/Adidas-Ultraboost-20-W-05.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/login/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/login/registration.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckAdminLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdminLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/StoreProductPost.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/StoreProductPost.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/login/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/login/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/product/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/backend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/frontend.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,18 +194,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/backend/js" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Backend" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.CommitDialog" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\app\Http\Controllers\Backend" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\js" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\css" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\resources\views\backend\product" />
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\css" />
-      <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\upload\image\brand" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mr. Dungx\Desktop\PHP-Laravel-Project\ShoesShop\public\backend\login\js" />
@@ -207,7 +231,7 @@
       <workItem from="1605405241220" duration="25055000" />
       <workItem from="1605448267487" duration="25812000" />
       <workItem from="1605599806544" duration="21302000" />
-      <workItem from="1605838924476" duration="37062000" />
+      <workItem from="1605838924476" duration="60514000" />
     </task>
     <task id="LOCAL-00001" summary="1116">
       <created>1605932235771</created>
@@ -237,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605974424383</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="xong tạm dao riện index front">
+      <created>1605974888317</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1605974888317</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +292,8 @@
     <MESSAGE value="1126" />
     <MESSAGE value="dung" />
     <MESSAGE value="up" />
-    <option name="LAST_COMMIT_MESSAGE" value="up" />
+    <MESSAGE value="xong tạm dao riện index front" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong tạm dao riện index front" />
   </component>
   <component name="WindowStateProjectService">
     <state x="384" y="164" key="#Notifications" timestamp="1605933230589">
@@ -272,14 +304,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1605581904876" />
-    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1605974423399">
+    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1605974887565">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605974423399" />
-    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1605932397738">
+    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605974887565" />
+    <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1606022664408">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605932397738" />
+    <state x="421" y="95" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1606022664408" />
     <state x="432" y="207" key="Github.CreatePullRequestDialog" timestamp="1605933293881">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -288,30 +320,34 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="435" y="215" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1605849847267" />
-    <state x="477" y="264" key="NewPhpFileDialog" timestamp="1605520355269">
+    <state x="121" y="50" key="MergeDialog" timestamp="1606031223024">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="477" y="264" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1605520355269" />
+    <state x="121" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606031223024" />
+    <state x="903" y="179" key="NewPhpFileDialog" timestamp="1606013766610">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="903" y="179" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1606013766610" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1605931208736">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605931208736" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605974431153">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1605974893135">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605974431153" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605974374873">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605974893135" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606031146362">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605974374873" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606031146362" />
     <state x="346" y="73" width="589" height="534" key="find.popup" timestamp="1605518485115">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="346" y="73" width="589" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1605518485115" />
-    <state x="297" y="151" key="run.anything.popup" timestamp="1605585443229">
+    <state x="297" y="151" key="run.anything.popup" timestamp="1606011293527">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605585443229" />
+    <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1606011293527" />
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605953736856">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

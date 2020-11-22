@@ -167,10 +167,24 @@
             <ul class="header__topbar-list">
 
                 <li class="header__topbar-item">
-                    <a href="#" class="header__topbar-item-link">
+                    <a href="{{asset(route('fr.login'))}}" class="header__topbar-item-link">
 
                         <i class="fas fa-user header__topbar-item-icon"></i>
-                        <span class="header__topbar-item-nameicon">Đăng nhập</span>
+                        <span class="header__topbar-item-nameicon">Đăng nhập  </span>
+
+                    </a>
+                    <a href="{{asset(route('fr.registration'))}}" class="header__topbar-item-link">
+
+                        <i class="fas fa-user header__topbar-item-icon"></i>
+                        <span class="header__topbar-item-nameicon">Đăng ký</span>
+
+                    </a>
+                    <a  class="header__topbar-item-link">
+
+                        <span class="header__topbar-item-nameicon">hello</span>
+                        @if(session('idCustomer'))
+                            <span class="header__topbar-item-nameicon">hello {{session('usernameCustomer')}}</span>
+                        @endif
 
                     </a>
                 </li>
@@ -402,7 +416,7 @@
                                 <td class="image-cart">
                                     <a href="/products/bunny-1" title="/products/bunny-1"><img
                                             src="https://product.hstatic.net/1000351433/product/5f0df9ac-1630-4bd0-8d40-74150952c03f_0b852dbc36c84bfeb0d81d8ecb037a64_small.jpg"
-                                            alt="/products/bunny-1"></a>
+                                            alt=""></a>
                                 </td>
                                 <td>
                                     <a class="pro-title-view" href="/products/bunny-1"

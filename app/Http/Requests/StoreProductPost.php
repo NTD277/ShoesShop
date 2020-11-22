@@ -26,7 +26,7 @@ class StoreProductPost extends FormRequest
     {
         return [
             'brandProduct'=> 'required',
-            'nameProduct' =>'required|unique:products,name|max:100',
+            'nameProduct' =>'required|max:100',
             'priceProduct' =>'required|numeric',
             'qtyProduct' =>'required|numeric',
         ];

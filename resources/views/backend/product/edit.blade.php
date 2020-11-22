@@ -33,43 +33,37 @@
                     <div class="right__inputWrapper">
                         <label>Thương hiệu</label>
                         <select class="form-control js-search-brand" id="brandProduct" name="brandProduct">
-                            <option value="{{$nameBrand}}">{{$nameBrand}}</option>
+                            <option value="{{$idBrand}}">{{$nameBrand}}</option>
                             @foreach($brand as $keys => $item)
                                 <option value="{{$item->id}}">{{$item->name}}</option>
                             @endforeach
                         </select>
                     </div>
 
-{{--                    <div class="right__inputWrapper">--}}
-{{--                        <label for="title">Màu</label>--}}
-{{--                        @foreach($color as $keys =>$items)--}}
-{{--                            @foreach($colorProperty as $key => $item)--}}
-{{--                                <input {{$item == $items->detail ? 'checked' : ''}} type="checkbox"--}}
-{{--                                       name="{{$items->detail}}" value="{{$items->detail}}">--}}
-{{--                                <lable for="{{$items->detail}}">{{$items->detail}}</lable>--}}
-{{--                            @endforeach--}}
-{{--                        @endforeach--}}
-{{--                    </div>--}}
                     <div class="right__inputWrapper">
                         <label for="title">Màu</label>
-                        <select class="form-control js-search-brand" id="colorProduct" name="colorProduct">
-
-                            <option value="">--Chọn màu--</option>
-                            @foreach($properties as $keys =>$items)
-                                <div class="right-checkbox-wrapper">
-                                    <option value="{{$items->detail}}">{{$items->detail}}</option>
-                                </div>
-                            @endforeach
-                        </select>
+                        @foreach($color as $keys =>$items)
+                            <input
+                                @foreach($colorProperty as $key => $item)
+                                    @if($item == $items->detail)
+                                        checked
+                                    @endif
+                                @endforeach
+                                type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">
+                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>
+                        @endforeach
                     </div>
                     <div class="right__inputWrapper">
                         <label for="title">size</label>
-                        @foreach($size as $keys => $items)
-                            @foreach($sizeProperty as $key => $item)
-                                <input {{$item == $items->detail ? 'checked' : ''}} type="checkbox"
-                                       name="{{$items->detail}}" value="{{$items->detail}}">
-                                <lable for="{{$items->detail}}">{{$items->detail}}</lable>
-                            @endforeach
+                        @foreach($size as $keys =>$items)
+                            <input
+                                @foreach($sizeProperty as $key => $item)
+                                @if($item == $items->detail)
+                                checked
+                                @endif
+                                @endforeach
+                                type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">
+                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>
                         @endforeach
                     </div>
                     <div class="right__inputWrapper">
@@ -81,13 +75,18 @@
                         <input type="text" placeholder="Số lượng" name="qtyProduct" value="{{$qty}}">
                     </div>
                     <div class="right__inputWrapper input-field">
-                        <label for="imageProducts">Ảnh sản phẩm</label>
-                        <div class="input-images has-files" type="text" name="imageProducts" id="imageProducts"></div>
+                        <label for="avatarProduct">Ảnh đại diện sản phẩm</label>
+                        <div class="input-images-1" type="text" name="avatarProduct" id="avatarProduct"></div>
+                    </div>
+
+                    <div class="right__inputWrapper input-field">
+                        <label for="imageProducts">Ảnh chi tiết sản phẩm</label>
+                        <div class="input-images" type="text" name="imageProducts" id="imageProducts"></div>
                     </div>
 
                     <div class="right__inputWrapper">
-                        <label for="statusBrand">Trạng thái</label>
-                        <select name="statusBrand" id="statusBrand" class="form-control">
+                        <label for="statusProducts">Trạng thái</label>
+                        <select name="statusProducts" id="statusProducts" class="form-control">
                             <option value="1" {{ $status == 1 ? 'selected' : ''}}>Active</option>
                             <option value="0" {{ $status == 0 ? 'selected' : ''}}>Deactive</option>
                         </select>
@@ -102,6 +101,7 @@
     <script src="{{asset('backend/js/image-uploader.min.js')}}"></script>
     <script type="text/javascript">
         $(function () {
+            $('.input-images-1').imageUploader();
             $('.input-images').imageUploader();
         });
     </script>

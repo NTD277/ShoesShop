@@ -34,8 +34,8 @@ class BaseController extends Controller
         $brand = new Brand();
         $data = [];
         $route = Route::current();
-        $data['slugBrand'] = $route->parameters['slug'] ?? null;
-        $data['select'] = $route->parameters['select'] ?? null;
+        $data['slugBrand'] = $route->parameters['slug'] ?? '';
+        $data['select'] = $route->parameters['select'] ?? '';
         $data['newBrand'] = Brand::where('status',1)->get();
         $data['productHeader'] = $product->SelectByNumber(5,'adidas');
         View::share('data',$data);

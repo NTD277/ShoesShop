@@ -3,8 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Session;
 
 class CheckAdminLogin
 {
@@ -17,29 +15,18 @@ class CheckAdminLogin
      */
     public function handle($request, Closure $next)
     {
-        $route = Route::currentRouteName();
-        if($route === 'admin.Login'){
-            if($this->checkSessionAdmin()){
-                // vao trang dashboard luon - vi dang nhap roi
-                return redirect(route('admin.dashboard'));
-            }
-        } else {
-            if(!$this->checkSessionAdmin()){
-                // quay lai trang login
-                return redirect(route('admin.login'));
-            }
+//        dd($this->checkInfoAdminLogin($request));
+        if (!$this->checkInfoAdminLogin($request)){
+            return redirect()->route('admin.login');
         }
         return $next($request);
     }
 
-    // kiem tra session admin co ton tai hay ko?
-    private function checkSessionAdmin()
+    private function checkInfoAdminLogin($request)
     {
-        $idSession = Session::get('id');
-        $username = Session::get('username');
-        if(is_numeric($idSession) && !empty($username)){
-            return true;
-        }
-        return false;
+        $sessionID = $request->session()->get('id');
+        $sessionID = is_numeric($sessionID) && $sessionID > 0 ? true :false;
+        return $sessionID;
     }
+
 }

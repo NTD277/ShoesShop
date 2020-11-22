@@ -23,7 +23,7 @@ class ProductController extends Controller
         $data['mess'] = $request->session()->get('mess');
         if (session('id')) {
             $data['product'] = DB::table('products')
-                ->select('products.*', 'brands.name as nameBrand')
+                ->select('products.*', 'brands.name as nameBrand','products.idBrand as idBrand')
                 ->join('brands', 'brands.id', '=', 'products.idBrand')
                 ->orderByDesc('products.status')
                 ->get();
@@ -60,7 +60,6 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $max = DB::table('products')->max('id');
-//        dd($max);
         $dataImage = $request->file('images');;
         foreach ($dataImage as $keys =>$items)
         {
@@ -162,6 +161,7 @@ class ProductController extends Controller
         foreach ($data as $key => $items)
         {
             $data['id'] = $id;
+            $data['idBrand'] = $items->idBrand;
             $data['nameBrand'] = $items->nameBrand;
             $data['name'] = $items->name;
             $data['image'] = $items->imageProduct;
@@ -188,7 +188,64 @@ class ProductController extends Controller
      */
     public function update(StoreProductPost $request, $id)
     {
+        $idImageProducts = DB::table('image_products')
+        ->select('id')
+        ->where('idProduct', $id)->get();
+        $nameBrand = $request->brandProduct;
+//        dd($nameBrand);
+        $dataImage = $request->file('images');
+        foreach ($dataImage as $keys =>$items)
+        {
+            $imageProduct[$keys] = $items->getClientOriginalName();
+            $upload = $items->move('upload/image/product', $items->getClientOriginalName());
+        }
+        $nameProduct = $request->nameProduct;
+        $slugProduct = Str::slug($nameProduct, '-');
+        $avatarProduct = $imageProduct[0];
+        $priceProduct = $request->priceProduct;
+        $qtyProduct = $request->qtyProduct;
+        $noteProduct = $request->noteProduct ?? '';
+        $statusProduct = $request->statusProducts;
+//        $properties = DB::table('properties')->get();
+//        $data = [];
+//        foreach ($properties as $keys => $items) {
+//            if ($request->get($keys + 1) == $items->detail && $items->detail != null) {
+//                $data[$keys] = $items->id;
+//            }
+//        }
+        $updateProduct = DB::table('products')
+            ->where('id','=',$id)
+            ->update([
+            'idBrand' => $nameBrand,
+            'slug' => $slugProduct,
+            'name' => $nameProduct,
+            'avatar' =>$avatarProduct,
+            'price' => $priceProduct,
+            'qty' => $qtyProduct,
+            'note' => $noteProduct,
+            'status' => $statusProduct,
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
 
+//        foreach ($data as $keys => $items) {
+//            $updateProductProperties = DB::table('productproperties')
+//                ->where('idProduct','=',$id)
+//                ->update([
+//                'idProperty' => $items,
+//                'updated_at' => date('Y-m-d H:i:s')
+//            ]);
+//        }
+
+        foreach ($imageProduct as $keys =>$items){
+//            dd($idImageProducts[$keys]->id);
+            $updateImageProducts = DB::table('image_products')
+                ->where('idProduct','=',$id)
+                ->where('id' ,'=',$idImageProducts[$keys]->id)
+                ->update([
+                'name' => $items,
+                'updated_at' => date('Y-m-d H:i:s')
+            ]);
+        }
     }
 
     /**
