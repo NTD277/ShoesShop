@@ -192,7 +192,7 @@
                     <a href="#" class="header__topbar-item-link">
 
                         <i class="fas fa-shopping-cart header__topbar-item-icon"></i>
-                        <span class="header__topbar-item-nameicon">Giỏ hàng</span>
+                        <span class="header__topbar-item-nameicon"><a href="{{route('fr.cart')}}">Giỏ hàng</a></span>
                         <span class="header__topbar-item-count">(0)</span>
                     </a>
                 </li>
@@ -442,7 +442,7 @@
                                 <td class="text-right" id="total-view-cart">660,000₫</td>
                             </tr>
                             <tr>
-                                <td><a href="/cart" class="linktocart button dark">Xem giỏ hàng</a></td>
+                                <td><a href="" class="linktocart button dark">Xem giỏ hàng</a></td>
                                 <td><a href="/checkout" class="linktocheckout button dark">Thanh toán</a></td>
                             </tr>
                             </tbody>

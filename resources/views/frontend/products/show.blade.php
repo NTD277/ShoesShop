@@ -1,29 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DemoSHOPGIAY</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <!-- CSS only -->
-
-
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/app.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/detail.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/base.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/grid.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/css/responsive.css')}}">
-    {{--    {{!-- <link rel="stylesheet" href="/css/admin.css"> --}}
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{{asset('frontend/font/fontawesome-free-5.14.0-web/css/all.min.css')}}">
-
-</head>
-<body>
-<div class="app">
-    <header class="header">
-        @include('frontend.partials.header')
-    </header>
-
+@extends('frontend.home.index')
+{{--    <header class="header">--}}
+{{--        @include('frontend.partials.header')--}}
+{{--    </header>--}}
+@section('content')
 <div class="container margin-top">
     <div class="row">
         @foreach($newProduct as $keys => $items)
@@ -95,7 +74,7 @@
             </div>
             <div style="display: inline" class="select-button">
                 <button  class="detail__button detail__button-buy">MUA NGAY</button>
-                <button  class= "detail__button detail__button-show-cart"><i class="fas fa-shopping-cart"></i> XEM GIỎ HÀNG</button>
+                <a href="{{route('fr.cart',['id' => $items->id])}}"  class= "detail__button detail__button-show-cart"><i class="fas fa-shopping-cart"></i> XEM GIỎ HÀNG</a>
             </div>
         </div>
         @endforeach
@@ -104,9 +83,7 @@
 
 
 {{--@include('frontend.partials.footer')--}}
-    <footer class="footer">
-        @include('frontend.partials.footer')
-    </footer>
+@endsection
 </div>
 
 <!-- JS, Popper.js, and jQuery -->

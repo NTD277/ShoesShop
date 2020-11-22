@@ -24,4 +24,5 @@ Route::group([
     Route::get('/handle-registration','LoginController@handleRegistration')->name('handle.registration');
     Route::get('/login','LoginController@index')->name('login');
     Route::get('/handle-login','LoginController@handleLogin')->name('handle.login');
+    Route::get('/cart','CartController@index')->name('cart');
 });

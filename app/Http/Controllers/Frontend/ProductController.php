@@ -11,6 +11,7 @@ class ProductController extends BaseController
 {
     public function index(Product $product, $slug)
     {
+        $title = 'Chi tiết';
         $newProduct = DB::table('products')
             ->where('status', 1)
             ->where('slug', $slug)
@@ -33,7 +34,7 @@ class ProductController extends BaseController
             ->where('products.slug', $slug)
             ->get();
 //        $newProductHeader = $product->SelectByNumber(5,'adidas');
-        return view('frontend.products.show', compact('newProduct', 'colorProduct', 'sizeProduct','imageProduct'));
+        return view('frontend.products.show', compact('title','newProduct', 'colorProduct', 'sizeProduct','imageProduct'));
     }
 
     public function ProductBrand()
