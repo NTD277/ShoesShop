@@ -12,11 +12,17 @@
         justify-content: flex-end;
         align-items: center;
     }
+    .show-on-mobile-tablet{
+        display: flex;
+    }
+    .product-image-small{
+        width: 50px;
+    }
 }
 
 /* moible */
 @media (max-width:739px) {
-    
+
     .cart-mobile{
         padding-right: 15px;
     }
@@ -357,10 +363,13 @@
         margin-bottom: 10px;
         outline: none;
         border: 1px solid black;
+        height: 50px;
     }
-
+    .description-button{
+        font-size: 8px;
+    }
     .detail__button-buy {
-        font-size: 1.4rem;
+        font-size: 2rem;
     }
 
     .detail__button-show-cart {

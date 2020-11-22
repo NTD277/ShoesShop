@@ -186,7 +186,7 @@
                     </a>
                     @endif
                 </li>
-                <li class="header__topbar-item">
+                <li class="header__topbar-item wrapper-customer">
                     <a  class="header__topbar-item-link">
 
 
@@ -195,6 +195,19 @@
                         @endif
 
                     </a>
+                    <div class="info-customer">
+                        <div class="avatar-customer">
+                            <img class="avt-cus" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/118592620_1735638136590577_536306083793923942_o.jpg?_nc_cat=111&ccb=2&_nc_sid=a4a2d7&_nc_ohc=aW2NOEGnqDoAX9U57Uv&_nc_ht=scontent.fhan2-2.fna&oh=88a006eb2ff54f646e24922a0b8586c8&oe=5FE0431D" alt="">
+                        </div>
+                        @if(session('idCustomer'))
+                        <div class="name-customer">
+                            {{session('usernameCustomer')}}
+                        </div>
+                        @endif
+                        <div class="button-logout">
+                            <a class="logout" href="">Đăng xuất</a>
+                        </div>
+                    </div>
                 </li>
                 </li>
                 <li class="header__topbar-item">

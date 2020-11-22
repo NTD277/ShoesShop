@@ -229,3 +229,10 @@
 .size:hover{
     border-color: black;
 }
+.prodict-image-wrap-mobile-tablet{
+    display: flex;
+    overflow: auto;
+}
+.prodict-image-wrap-pc{
+    overflow: auto;
+}

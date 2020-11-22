@@ -85,7 +85,15 @@ a:hover {
 .mt-24 {
     margin-top: 24px;
 }
-
+.mr-24 {
+    margin-right: 24px;
+}
+.mr-12{
+    margin-right: 12px;
+}
+.mbt-12{
+    margin-bottom: 12px;
+}
 .move-left {
     transform: translateX(0);
 }
@@ -104,24 +112,24 @@ a:hover {
 .black-color {
     border : 1px solid #000;
 }
-::-webkit-scrollbar {
-    width: 4px;
-}
+/*::-webkit-scrollbar {*/
+/*    width: 4px;*/
+/*}*/
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-}
+/*!* Track *!*/
+/*::-webkit-scrollbar-track {*/
+/*    background: #f1f1f1;*/
+/*}*/
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
+/*!* Handle *!*/
+/*::-webkit-scrollbar-thumb {*/
+/*    background: #888;*/
+/*    border-radius: 10px;*/
+/*}*/
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
+/*!* Handle on hover *!*/
+/*::-webkit-scrollbar-thumb:hover {*/
+/*    background: #555;*/
+/*}*/
 
 /* footer */

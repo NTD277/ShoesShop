@@ -87,10 +87,10 @@
                                 <tfoot>
 
                                 <tr>
-                                    <td colspan="1" style="border: none;background: #f5f6fa;"><a href="http://hocwebgiare.com" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></td>
+                                    <td colspan="1" style="border: none;background: #f5f6fa;"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></td>
                                     <td style="border: none;background: #f5f6fa;"></td>
                                     <td colspan="2" style="border: none;background: #f5f6fa;"><strong>Tổng tiền 500.000.000 đ</strong></td>
-                                    <td colspan="2" style="border: none;background: #f5f6fa;"><a href="http://hocwebgiare.com" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></td>
+                                    <td colspan="2" style="border: none;background: #f5f6fa;"><a href="#" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></td>
 
                                 </tr>
                                 </tfoot>

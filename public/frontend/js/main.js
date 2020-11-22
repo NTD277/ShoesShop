@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded",function(){
     productImageSmalll.forEach(item=>{
         item.addEventListener('click',()=>{
             detailMainImage.src = item.src;
+            // item.style.border = "1px solid #9E9E9E"
         })
     })
 

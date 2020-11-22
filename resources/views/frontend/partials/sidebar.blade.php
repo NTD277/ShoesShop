@@ -11,7 +11,6 @@
                 @foreach($data['newBrand'] as $keys => $items)
                     <li class="item-category-children">
                         <a href="{{route('fr.brand',['slug'=> $items->slug,'select'=>$data['select']])}}">
-{{--                            ,'select' => $select--}}
                             {{$items->name}}
                         </a>
                     </li>
@@ -28,9 +27,6 @@
                     <li class="item-category-children">
                         <a href="{{route('fr.color',['detailColor'=> $items->detail,'select'=>$data['select']])}}">
                             {{$items->detail}}
-{{--                            @if($items->detail == 'Green')--}}
-{{--                                Xanh--}}
-{{--                            @endif--}}
                         </a>
                     </li>
                 @endforeach
@@ -50,16 +46,16 @@
                 @endforeach
             </ul>
         </li>
-        <li class="item-category-pc">
-            <div>
-                <div><i class="fas fa-tshirt"></i>Chất liệu</div> <i class="fas fa-chevron-down"></i>
-            </div>
-            <ul class="list-category-children hide">
-                <li class="item-category-children">Da thật</li>
-                <li class="item-category-children">Da giả</li>
-                <li class="item-category-children">Cao su</li>
+{{--        <li class="item-category-pc">--}}
+{{--            <div>--}}
+{{--                <div><i class="fas fa-tshirt"></i>Chất liệu</div> <i class="fas fa-chevron-down"></i>--}}
+{{--            </div>--}}
+{{--            <ul class="list-category-children hide">--}}
+{{--                <li class="item-category-children">Da thật</li>--}}
+{{--                <li class="item-category-children">Da giả</li>--}}
+{{--                <li class="item-category-children">Cao su</li>--}}
 
-            </ul>
-        </li>
+{{--            </ul>--}}
+{{--        </li>--}}
     </ul>
 </div>
