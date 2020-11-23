@@ -46,6 +46,7 @@
         background-color: #5cb85c;
         border-color: #4cae4c;
     }
+
 </style>
 <body>
 <div class="wrapper">
@@ -56,7 +57,7 @@
                     <div class="right__title">Xem giỏ hàng</div>
                     <p class="right__desc">Tất cả sản phẩm</p>
                     <div class="right__table">
-                        <form action="{{route('fr.order')}}" method="post" enctype="multipart/form-data">
+                        <form class="form-info" action="{{route('fr.order')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('get')
                             <div class="right__tableWrapper">

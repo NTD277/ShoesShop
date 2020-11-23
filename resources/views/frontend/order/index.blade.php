@@ -63,7 +63,16 @@
         overflow-y: hidden;
         border-right: 1px solid #a79f9f
     }
-
+    @media (max-width: 739px) {
+        .right{
+            overflow: auto;
+            border: none;
+            height: auto;
+        }
+        .dashboard{
+            overflow: auto;
+        }
+    }
     .dashboard {
         display: block;
     }
@@ -139,9 +148,9 @@
 <div class="wrapper">
     <div class="container">
         <div class="dashboard">
-            <form action="{{route('fr.handle.order')}}" method="post" >
+            <form style="height: 100%" action="{{route('fr.handle.order')}}" method="post" >
             <div class="row" style="height: 100%">
-                <div class="col col-lg-6" style="height: 100%">
+                <div class="col col-lg-6 col-md-6 " style="height: 100%">
 
                         @csrf
                         @method('GET')
@@ -170,7 +179,7 @@
                     </div>
 
                 </div>
-                <div class="col col-lg-6">
+                <div class="col col-lg-6 col-md-6 ">
                     <div class="right-info">
 
                         @foreach(session('cart') as $keys => $items)
