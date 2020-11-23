@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class CustomerController extends BaseController
 {
-    public function index(Request $request)
+    public function index()
     {
         $title = 'Sửa thông tin';
         $data =[];
