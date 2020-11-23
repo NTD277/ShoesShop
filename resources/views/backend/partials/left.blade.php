@@ -38,8 +38,8 @@
             <li class="left__menuItem">
                 <div class="left__title"><img src="{{asset('backend/assets/icon-user.svg')}}" alt="">Admin<img class="left__iconDown" src="{{asset('backend/assets/arrow-down.svg')}}" alt=""></div>
                 <div class="left__text">
-                    <a class="left__link" href="insert_admin.html">Chèn Admin</a>
-                    <a class="left__link" href="view_admins.html">Xem Admins</a>
+                    <a class="left__link" href="{{route('admin.profile.edit',['id' => session('id')])}}">Sửa thông tin</a>
+                    <a class="left__link" href="{{route('admin.profile.index')}}">Thông tin</a>
                 </div>
             </li>
             <li class="left__menuItem">

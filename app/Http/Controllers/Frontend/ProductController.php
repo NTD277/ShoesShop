@@ -33,6 +33,7 @@ class ProductController extends BaseController
             ->join('products', 'image_products.idProduct', '=','products.id')
             ->where('products.slug', $slug)
             ->get();
+//        dd($imageProduct);
 //        $newProductHeader = $product->SelectByNumber(5,'adidas');
         return view('frontend.products.show', compact('title','newProduct', 'colorProduct', 'sizeProduct','imageProduct'));
     }

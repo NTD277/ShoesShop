@@ -23,6 +23,9 @@ Route::group([
     Route::resource('/brand','BrandController');
     Route::resource('/product','ProductController');
     Route::resource('/import','ImportController');
+    Route::get('/profile','AdminController@index')->name('profile.index');
+    Route::get('/profile/{id}','AdminController@edit')->name('profile.edit');
+    Route::get('/updateprofile','AdminController@update')->name('profile.update');
 });
 
 

@@ -20,6 +20,7 @@ class Product extends Model
     public function SelectiveDefault()
     {
         $newProduct = DB::table('products')
+//            ->paginate(15)
             ->where('status',1)
             ->get();
         return $newProduct;
@@ -59,8 +60,8 @@ class Product extends Model
 
     /*Hien thi X sp*/
     public function SelectByNumber($limit,$nameBrand){
-        $newProduct = DB::table('brands')
-            ->join('products','products.idBrand','=','brands.id')
+        $newProduct = DB::table('products')->select('products.*','brands.name as nameBrand','brands.slug as slugBrand' )
+            ->join('brands','products.idBrand','=','brands.id')
             ->where('products.status',1)
             ->where('brands.name',$nameBrand)
             ->limit($limit)

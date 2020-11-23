@@ -41,7 +41,10 @@ class BaseController extends Controller
         $data['newBrand'] = Brand::where('status',1)->get();
         $data['color'] = Property::where('status',1)->where('name','Màu')->get();
         $data['size'] = Property::where('status',1)->where('name','size')->get();
-        $data['productHeader'] = $product->SelectByNumber(5,'adidas');
+        $data['productHeaderAdidas'] = $product->SelectByNumber(3,'adidas');
+        $data['productHeaderConverse'] = $product->SelectByNumber(3,'Converse');
+        $data['productHeaderGucci'] = $product->SelectByNumber(3,'Gucci');
+//        dd($data['productHeaderAdidas']);
         View::share('data',$data);
     }
 }
