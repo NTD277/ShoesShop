@@ -42,6 +42,7 @@
 
     .right__content {
         height: auto;
+        padding: 60px 5%;
     }
 
     .right-footer {
@@ -64,10 +65,72 @@
     .dashboard {
         display: block;
     }
-
+    .image-product-cart{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 30px;
+    }
     .image-product-cart img {
         width: 60px;
         height: 60px;
+        border: 1px solid #e0e0e0;
+        margin-right: 8px;
+    }
+    .right-info{
+        padding : 60px 5%;
+    }
+    .quantity span{
+        font-size:11px ;
+        color: #2e2e2e;
+    }
+    .price-product{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .money{
+        padding: 30px 0;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    .cache-money{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 10px;
+    }
+    .cache-money span:nth-child(1) {
+        font-size: 13px;
+        color: #737373
+    }
+    .money-transport{
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .money-transport span:nth-child(1){
+        font-size: 13px;
+        color: #737373
+    }
+    .total-money{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+    }
+    .total-money span:nth-child(2){
+        font-size: 22px;
+    }
+    .wrapper-info-image {
+        display: flex;
+        align-items: center;
+    }
+    .wrapper-info-image span{
+        font-size: 11px;
+        color: #2e2e2e;
     }
 </style>
 <body>
@@ -96,24 +159,42 @@
                     </div>
                 </div>
                 <div class="col col-lg-6">
-                    @foreach(session('cart') as $keys => $items)
-                        <div class="image-product-cart">
-                            <img src="{{asset('upload/image/product/' . $items->avatar)}}">
-                        </div>
-                        <div class="price-product">
-                            <span>Giá</span>
-                            {{number_format($items->price)}} đ
-                        </div>
-                        <div class="quantity">
-                            <span>Số lượng</span>
-                            <span>1</span>
-                        </div>
-                        <div class="total-money">
-                            <span>Tổng tiền</span>
-                            <span>{{number_format($items->price)}} đ</span>
-                        </div>
+                    <div class="right-info">
+                        @foreach(session('cart') as $keys => $items)
+                            <div class="image-product-cart">
+                                <div class="wrapper-info-image">
+                                    <img src="{{asset('upload/image/product/' . $items->avatar)}}">
+                                    <span>{{$items->name}}</span>
+                                </div>
 
-                    @endforeach
+                                <div class="price-product">
+                                    {{number_format($items->price)}} đ
+                                    <div class="quantity">
+                                        <span>Số lượng : </span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="money">
+                                <div class="money-transport">
+                                    <span>Phí vận chuyển </span>
+                                    <span>40.000 đ</span>
+                                </div>
+                                <div class="cache-money">
+                                    <span>Tạm tính </span>
+                                    <span>{{number_format($items->price)}} đ</span>
+                                </div>
+
+                            </div>
+                            <div class="total-money">
+                                <span>Tổng tiền</span>
+                                <span>{{number_format($items->price)}} đ</span>
+                            </div>
+
+                        @endforeach
+                    </div>
+
                 </div>
             </div>
 
