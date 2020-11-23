@@ -28,7 +28,7 @@
             </a>
         </div>
         <div class="right__table">
-            <p class="right__tableTitle">Đơn hàng mới</p>
+            <p class="right__tableTitle">Tất cả đơn hàng</p>
             <div class="right__tableWrapper">
                 <table>
                     <thead>
@@ -67,7 +67,7 @@
                     </tbody>
                 </table>
             </div>
-            <a href="" class="right__tableMore"><p>Xem tất cả các đơn đặt hàng</p> <img src="{{asset('backend/assets/arrow-right-black.svg')}}" alt=""></a>
+
         </div>
     </div>
 </div>

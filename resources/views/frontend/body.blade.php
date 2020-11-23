@@ -277,7 +277,7 @@
 
         <div class="row">
 
-            @include('frontend.partials.sidebar')
+
             <div class="col col-lg-9 col-sm-12">
                 <div class="row">
                     <div class="col col-lg-12 mt-24 ">
@@ -380,7 +380,7 @@
                 </div>
 {{--                {{ $$newProduct->links() }}--}}
             </div>
-
+            @include('frontend.partials.sidebar')
 
         </div>
     </div>
