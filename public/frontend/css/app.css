@@ -347,7 +347,7 @@ span.header__main-category-item-text {
     width: 100%;
     display: block;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #000;
 }
 
@@ -419,8 +419,21 @@ span.header__main-category-item-text {
 
 #mainbanner {
     margin-top: var(--header-height);
+    position: relative;
 }
+.banner-pre{
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    left: 10px;
+}
+.banner-next{
+    position: absolute;
+    top: 50%;
+    font-size: 50px;
+    right: 10px;
 
+}
 .home-product {
 
     transition: 0.4s ease-out;

@@ -253,13 +253,16 @@
         }
     </style>
     <section id="mainbanner">
+        <div class="banner-pre">
+            <i class="fas fa-chevron-left"></i>
+        </div>
         <a href="#" class="mainbanner--link">
-            <img src="https://file.hstatic.net/1000003969/file/cover_0027ed617027437888fc8a07920ff30e.jpg" alt="bannermain"
+            <img class="banner-image" src="{{asset('upload/image/banner/giay-adidas-ultra-boost-20-new-2020.jpg')}}" alt="bannermain"
                  width="100%">
         </a>
-{{--        <a href="#" class="mainbanner--link">--}}
-{{--                <img src="/img/banner3.jpg" alt="" width="100%" >--}}
-{{--            </a>--}}
+        <div class="banner-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
     </section>
 
     <div class="category-home-mobile ">
@@ -397,6 +400,45 @@
                 const listSortHome = document.querySelector('.list-sort-home');
                 listSortHome.classList.toggle('hide')
             })
+            const bannerImage =document.querySelector('.banner-image');
+            const bannerPre = document.querySelector('.banner-pre');
+            const bannerNext = document.querySelector('.banner-next');
+            const arrayBanner = ['upload/image/banner/giay-adidas-ultra-boost-20-new-2020.jpg','upload/image/banner/giay-sneaker-nike-jordan-1-high-mid-low.png','upload/image/banner/sale-black-friday-2020-tuloshop.png','upload/image/banner/sieu-pham-sneaker-nike-air-force-1-x-g-dragon-para-noise-1-1.jpg'];
+            var index = 0;
+            function slideShow(){
+                setTimeout(function (){
+                    index++;
+                    if(index == arrayBanner.length-1){
+                        index=0;
+                    }
+                    bannerImage.src = arrayBanner[index];
+                    slideShow();
+                },3000)
+            }
+            slideShow();
+            bannerPre.addEventListener('click',()=>{
+                if(index==0){
+                    index=arrayBanner.length-1;
+                    index--;
+                    bannerImage.src = arrayBanner[index];
+                }
+                else {
+                    index--;
+                    bannerImage.src = arrayBanner[index];
+                }
+            })
+            bannerNext.addEventListener('click',()=>{
+                if(index==arrayBanner.length-1){
+                    index=0;
+                    index++;
+                    bannerImage.src = arrayBanner[index];
+                }
+                else {
+                    index++;
+                    bannerImage.src = arrayBanner[index];
+                }
+            })
+
         })
     </script>
 @endsection

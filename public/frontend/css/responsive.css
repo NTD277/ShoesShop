@@ -22,7 +22,9 @@
 
 /* moible */
 @media (max-width:739px) {
-
+    #mainbanner {
+        margin-top: var(--header-height-mobile);
+    }
     .cart-mobile{
         padding-right: 15px;
     }

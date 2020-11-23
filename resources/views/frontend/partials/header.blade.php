@@ -168,41 +168,44 @@
 
                 <li class="header__topbar-item">
                     @if(!session('usernameCustomer'))
-                    <a href="{{asset(route('fr.login'))}}" class="header__topbar-item-link">
+                        <a href="{{asset(route('fr.login'))}}" class="header__topbar-item-link">
 
-                        <i class="fas fa-user header__topbar-item-icon"></i>
-                        <span class="header__topbar-item-nameicon">Đăng nhập  </span>
+                            <i class="fas fa-user header__topbar-item-icon"></i>
+                            <span class="header__topbar-item-nameicon">Đăng nhập  </span>
 
-                    </a>
+                        </a>
                     @endif
                 </li>
                 <li class="header__topbar-item">
                     @if(!session('usernameCustomer'))
-                    <a href="{{asset(route('fr.registration'))}}" class="header__topbar-item-link">
+                        <a href="{{asset(route('fr.registration'))}}" class="header__topbar-item-link">
 
-                        <i class="fas fa-user header__topbar-item-icon"></i>
-                        <span class="header__topbar-item-nameicon">Đăng ký</span>
+                            <i class="fas fa-user header__topbar-item-icon"></i>
+                            <span class="header__topbar-item-nameicon">Đăng ký</span>
 
-                    </a>
+                        </a>
                     @endif
                 </li>
                 <li class="header__topbar-item wrapper-customer">
-                    <a  class="header__topbar-item-link">
+                    <a class="header__topbar-item-link">
 
 
                         @if(session('idCustomer'))
-                            <span class="header__topbar-item-nameicon"><i class="fas fa-user header__topbar-item-icon"></i> {{session('usernameCustomer')}}</span>
+                            <span class="header__topbar-item-nameicon"><i
+                                    class="fas fa-user header__topbar-item-icon"></i> {{session('usernameCustomer')}}</span>
                         @endif
 
                     </a>
                     <div class="info-customer">
                         <div class="avatar-customer">
-                            <img class="avt-cus" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/118592620_1735638136590577_536306083793923942_o.jpg?_nc_cat=111&ccb=2&_nc_sid=a4a2d7&_nc_ohc=aW2NOEGnqDoAX9U57Uv&_nc_ht=scontent.fhan2-2.fna&oh=88a006eb2ff54f646e24922a0b8586c8&oe=5FE0431D" alt="">
+                            <img class="avt-cus"
+                                 src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/118592620_1735638136590577_536306083793923942_o.jpg?_nc_cat=111&ccb=2&_nc_sid=a4a2d7&_nc_ohc=aW2NOEGnqDoAX9U57Uv&_nc_ht=scontent.fhan2-2.fna&oh=88a006eb2ff54f646e24922a0b8586c8&oe=5FE0431D"
+                                 alt="">
                         </div>
                         @if(session('idCustomer'))
-                        <a href="#" class="name-customer">
-                            {{session('usernameCustomer')}}
-                        </a>
+                            <a href="#" class="name-customer">
+                                {{session('usernameCustomer')}}
+                            </a>
                         @endif
                         <div class="button-logout">
                             <a class="logout" href="{{asset(route('fr.logout'))}}">Đăng xuất</a>
@@ -210,14 +213,14 @@
                     </div>
                 </li>
                 </li>
-{{--                <li class="header__topbar-item">--}}
-{{--                    <a href="{{route('fr.cart')}}" class="header__topbar-item-link">--}}
+                {{--                <li class="header__topbar-item">--}}
+                {{--                    <a href="{{route('fr.cart')}}" class="header__topbar-item-link">--}}
 
-{{--                        <i class="fas fa-shopping-cart header__topbar-item-icon"></i>--}}
-{{--                        <span class="header__topbar-item-nameicon">Giỏ hàng</span>--}}
-{{--                        <span class="header__topbar-item-count">(0)</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+                {{--                        <i class="fas fa-shopping-cart header__topbar-item-icon"></i>--}}
+                {{--                        <span class="header__topbar-item-nameicon">Giỏ hàng</span>--}}
+                {{--                        <span class="header__topbar-item-count">(0)</span>--}}
+                {{--                    </a>--}}
+                {{--                </li>--}}
             </ul>
 
         </div>
@@ -258,19 +261,20 @@
                                     </div>
                                 </div>
                                 @foreach($data['productHeaderAdidas'] as $keys => $items)
-                                <div class="col col-lg-3">
-                                    <div class="header__main-category-item">
+                                    <div class="col col-lg-3">
+                                        <div class="header__main-category-item">
 
-                                        <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
-                                            <img class="header__main-category-item-image"
-                                                 src="{{asset('upload/image/product/' . $items->avatar)}}"
-                                                 alt="">
-                                            <span class="header__main-category-item-text">
-
-                                            </span>
-                                        </a>
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
+                                               class="header__main-category-item-image-link">
+                                                <img class="header__main-category-item-image"
+                                                     src="{{asset('upload/image/product/' . $items->avatar)}}"
+                                                     alt="">
+                                                <span class="header__main-category-item-text">
+                                                    {{$items->name}}
+                                                </span>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
                                 @endforeach
 
 
@@ -297,11 +301,12 @@
                                     <div class="col col-lg-3">
                                         <div class="header__main-category-item">
 
-                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
+                                               class="header__main-category-item-image-link">
                                                 <img class="header__main-category-item-image"
                                                      src="{{asset('upload/image/product/' . $items->avatar)}}"
                                                      alt="">
-                                                <span class="header__main-category-item-text">
+                                                <span class="header__main-category-item-text">{{$items->name}}
                                             </span>
                                             </a>
                                         </div>
@@ -331,11 +336,12 @@
                                     <div class="col col-lg-3">
                                         <div class="header__main-category-item">
 
-                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
+                                               class="header__main-category-item-image-link">
                                                 <img class="header__main-category-item-image"
                                                      src="{{asset('upload/image/product/' . $items->avatar)}}"
                                                      alt="">
-                                                <span class="header__main-category-item-text">
+                                                <span class="header__main-category-item-text">{{$items->name}}
                                             </span>
                                             </a>
                                         </div>
@@ -352,7 +358,7 @@
                 <form method="get" class="header__search" action="{{route('fr.search')}}">
                     @csrf
                     <input name="search" type="text" class="search--input" placeholder="Tìm kiếm ...">
-{{--                    <input type="submit" class="btn-search" value="search">--}}
+                    {{--                    <input type="submit" class="btn-search" value="search">--}}
                     <button type="submit" class="btn-search"></button>
                 </form>
             </div>
