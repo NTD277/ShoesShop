@@ -236,3 +236,14 @@
 .prodict-image-wrap-pc{
     overflow: auto;
 }
+.link-guide {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: black;
+}
+.link-guide a:nth-child(1){
+    color: #929292;
+}
+.link-guide a:nth-child(3){
+    color: black;
+}

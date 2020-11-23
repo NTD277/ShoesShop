@@ -5,7 +5,7 @@
 @section('content')
     <div class="container margin-top">
         @foreach($newProduct as $keys => $items)
-        <h2><a href="{{asset(route('fr.home'))}}">Trang chủ</a> > <a href="#">{{$items->name}}</a></h2>
+        <div class="link-guide"><a href="{{asset(route('fr.home'))}}">Trang chủ</a> <i class="fas fa-chevron-right"></i> <a href="#">{{$items->name}}</a></div>
         @endforeach
         <div class="row">
             @foreach($newProduct as $keys => $items)

@@ -282,8 +282,8 @@
                 <div class="row">
                     <div class="col col-lg-12 mt-24 ">
                         <div class="home-right ">
-                            <span style="font-size: 1.3rem;font-weight:600">Tất cả sản phẩm @if($title != "Trang chủ")
-                                    >>  {{$title}}
+                            <span style="font-size: 1.3rem;font-weight:600"><a style="font-size: 1.3rem;color: #000" href="/">Tất cả sản phẩm</a> @if($title != "Trang chủ")
+                                    <i class="fas fa-chevron-right"></i>  {{$title}}
                                 @else
                                     @endif
 
@@ -447,7 +447,7 @@
                     }
                     index++;
                     bannerImage.src = arrayBanner[index];
-                    console.log(bannerImage.src)
+
 
                     slideShow();
                 },3000)
