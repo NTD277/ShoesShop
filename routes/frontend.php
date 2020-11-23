@@ -28,5 +28,6 @@ Route::group([
     Route::get('/logout','LoginController@logout')->name('logout');
     Route::get('/handle-login','LoginController@handleLogin')->name('handle.login');
     Route::get('/cart','CartController@index')->name('cart');
-    Route::get('search/{keyword?}', 'SearchController@index')->name('search');
+    Route::get('/order','OrderController@index')->name('order');
+    Route::get('search/{keyword?}','SearchController@index')->name('search');
 });

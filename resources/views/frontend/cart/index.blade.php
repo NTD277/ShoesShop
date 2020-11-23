@@ -95,7 +95,7 @@
                             <div class="footer-cart">
                                 <div class="total-order-money"><strong>{{number_format($items->price)}} đ</strong></div>
                                 <div  class="continue-shopping"><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></div>
-                                <div  class="pay"><a href="#" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></div>
+                                <div  class="pay"><a href="{{route('fr.order',['id' => $items->id])}}" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></div>
                             </div>
 
                         </div>
