@@ -12,7 +12,7 @@
         </div>
         <ul class="left__menu">
             <li class="left__menuItem">
-                <a href="index.html" class="left__title"><img src="{{asset('backend/assets/icon-dashboard.svg')}}" alt="">Dashboard</a>
+                <a href="{{asset(route('admin.dashboard'))}}" class="left__title"><img src="{{asset('backend/assets/icon-dashboard.svg')}}" alt="">Dashboard</a>
             </li>
             <li class="left__menuItem">
                 <div class="left__title"><img src="{{asset('backend/assets/icon-tag.svg')}}" alt="">Sản Phẩm<img class="left__iconDown" src="{{asset('backend/assets/arrow-down.svg')}}" alt=""></div>

@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="{{asset('backend/css/main.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/grid.css')}}">
+    <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
 </head>
 <style>
     input {
@@ -198,14 +199,14 @@
                                 </div>
                                 <div class="cache-money">
                                     <span>Tạm tính </span>
-                                    <span>{{number_format($items->price * $items->qty)}} đ</span>
-                                    <input type="hidden" name="sumMoney" value="{{$items->price * $items->qty +40000}}">
+                                    <span>{{number_format($items->price * $qty)}} đ</span>
+                                    <input type="hidden" name="sumMoney" value="{{$items->price * $qty +40000}}">
                                 </div>
 
                             </div>
                             <div class="total-money">
                                 <span>Tổng tiền</span>
-                                <span>{{number_format($items->price * $items->qty + 40000)}} đ</span>
+                                <span>{{number_format($items->price * $qty + 40000)}} đ</span>
                             </div>
 
                         @endforeach

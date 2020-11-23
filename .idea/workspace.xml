@@ -23,10 +23,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/customer/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/customer/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/login/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/login/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/left.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/order/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/frontend.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,7 +212,7 @@
       <workItem from="1605599806544" duration="21302000" />
       <workItem from="1605838924476" duration="66036000" />
       <workItem from="1606055593165" duration="20513000" />
-      <workItem from="1606108259480" duration="24007000" />
+      <workItem from="1606108259480" duration="26425000" />
     </task>
     <task id="LOCAL-00001" summary="1116">
       <created>1605932235771</created>
@@ -298,7 +298,21 @@
       <option name="project" value="LOCAL" />
       <updated>1606141235196</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="up">
+      <created>1606142284645</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1606142284645</updated>
+    </task>
+    <task id="LOCAL-00014" summary="up">
+      <created>1606142507927</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1606142507927</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,10 +353,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606061862844" />
-    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1606141233913">
+    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1606142506966">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606141233913" />
+    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606142506966" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1606022664408">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -367,10 +381,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605931208736" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606141240120">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606142512663">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606141240120" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606142512663" />
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606141273422">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -383,10 +397,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1606098828102" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605953736856">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1606145341033">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605953736856" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1606145341033" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

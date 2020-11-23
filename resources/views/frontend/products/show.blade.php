@@ -46,7 +46,7 @@
                         </div>
                         @if($items->qty > 0)
                             <span class="status-product">
-                    Trạng thái : <b>Còn hàng</b>
+                    Trạng thái : <b>Còn hàng (số lượng: {{$items->qty}})</b>
                 </span>
                         @else
                             <span class="status-product">
