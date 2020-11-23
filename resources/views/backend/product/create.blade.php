@@ -71,9 +71,8 @@
 
                             <option value="">--Chọn màu--</option>
                             @foreach($properties as $keys =>$items)
-                                <div class="right-checkbox-wrapper">
-                                    <option value="{{$items->detail}}">{{$items->detail}}</option>
-                                </div>
+                                    <option name="{{$items->id}}" value="{{$items->detail}}">{{$items->detail}}</option>
+
                             @endforeach
                         </select>
                     </div>
@@ -88,7 +87,6 @@
 {{--                    </div>--}}
                     <div class="right__inputWrapper">
                         <label>Chọn size</label>
-
                         @foreach($propertiesSize as $keys =>$items)
 
                             <div class="right-checkbox-wrapper">

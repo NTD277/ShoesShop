@@ -26,6 +26,8 @@ class ProductController extends Controller
                 ->select('products.*', 'brands.name as nameBrand','products.idBrand as idBrand')
                 ->join('brands', 'brands.id', '=', 'products.idBrand')
                 ->orderByDesc('products.status')
+                ->orderByDesc('products.id')
+
                 ->get();
             return view('backend.product.index', $data);
         } else {
@@ -78,11 +80,15 @@ class ProductController extends Controller
         $properties = DB::table('properties')
             ->get();
         $data = [];
+        $colorProduct = $request->colorProduct;
         foreach ($properties as $keys => $items) {
-            if ($request->get($keys + 1) == $items->detail && $items->detail != null) {
-                $data[$keys] = $items->id;
+            if ($request->get($keys + 1) == $items->detail) {
+                $data[$keys] = $items->detail;
             }
         }
+        $idColor = DB::table('properties')->where('detail','=',$colorProduct)->first();
+
+//        dd($idColor->id);
         if ($check->all() == null) {
             //co the tao the san pham
             $createProduct = DB::table('products')->insert([
@@ -98,24 +104,38 @@ class ProductController extends Controller
                 'updated_at' => null
             ]);
             // them vao bang productproperty
-            foreach ($data as $keys => $items) {
-                $createProductProperties = DB::table('productproperties')->insert([
+            if ($createProduct)
+            {
+                $createProductProperties2 = DB::table('productproperties')->insert([
                     'idProduct' => $max + 1,
-                    'idProperty' => $items,
+                    'idProperty' => $idColor->id,
                     'status' => 1,
                     'created_at' => date('Y-m-d H:i:s'),
                     'updated_at' => null
                 ]);
+//                dd(1);
+                foreach ($data as $keys => $items) {
+                    $createProductProperties = DB::table('productproperties')->insert([
+                        'idProduct' => $max + 1,
+                        'idProperty' => $keys +1,
+                        'status' => 1,
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => null
+                    ]);
+                }
+                foreach ($imageProduct as $keys =>$items){
+                    $createImageProducts = DB::table('image_products')->insert([
+                        'idProduct' => $max + 1,
+                        'name' => $items,
+                        'status' => 1,
+                        'created_at' => date('Y-m-d H:i:s'),
+                        'updated_at' => null
+                    ]);
+                }
             }
-            foreach ($imageProduct as $keys =>$items){
-                $createImageProducts = DB::table('image_products')->insert([
-                   'idProduct' => $max + 1,
-                    'name' => $items,
-                    'status' => 1,
-                    'created_at' => date('Y-m-d H:i:s'),
-                    'updated_at' => null
-                ]);
-            }
+
+
+
             $request->session()->flash('mess', 'Thêm sản phẩm mới thành công');
             return redirect()->route('admin.product.index');
         } else {
@@ -175,7 +195,6 @@ class ProductController extends Controller
             }
             $data['status'] = $items->status;
         }
-//        dd($colorProperty);
         return view('backend/product/edit',$data,compact('colorProperty','sizeProperty','brand','color','size'));
     }
 
@@ -192,7 +211,6 @@ class ProductController extends Controller
         ->select('id')
         ->where('idProduct', $id)->get();
         $nameBrand = $request->brandProduct;
-//        dd($nameBrand);
         $dataImage = $request->file('images');
         foreach ($dataImage as $keys =>$items)
         {
@@ -206,13 +224,6 @@ class ProductController extends Controller
         $qtyProduct = $request->qtyProduct;
         $noteProduct = $request->noteProduct ?? '';
         $statusProduct = $request->statusProducts;
-//        $properties = DB::table('properties')->get();
-//        $data = [];
-//        foreach ($properties as $keys => $items) {
-//            if ($request->get($keys + 1) == $items->detail && $items->detail != null) {
-//                $data[$keys] = $items->id;
-//            }
-//        }
         $updateProduct = DB::table('products')
             ->where('id','=',$id)
             ->update([
@@ -237,7 +248,6 @@ class ProductController extends Controller
 //        }
 
         foreach ($imageProduct as $keys =>$items){
-//            dd($idImageProducts[$keys]->id);
             $updateImageProducts = DB::table('image_products')
                 ->where('idProduct','=',$id)
                 ->where('id' ,'=',$idImageProducts[$keys]->id)
@@ -245,6 +255,13 @@ class ProductController extends Controller
                 'name' => $items,
                 'updated_at' => date('Y-m-d H:i:s')
             ]);
+        }
+        if ($updateProduct && $updateImageProducts){
+            $request->session()->flash('mess','Sửa thành công');
+            return redirect(route('admin.product.index'));
+        }else{
+            $request->session()->flash('mess','Đăng ký không thành công');
+            return redirect(route('admin.product.index'));
         }
     }
 

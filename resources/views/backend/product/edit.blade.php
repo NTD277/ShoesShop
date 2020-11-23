@@ -41,17 +41,28 @@
                     </div>
 
                     <div class="right__inputWrapper">
-                        <label for="title">Màu</label>
-                        @foreach($color as $keys =>$items)
-                            <input
-                                @foreach($colorProperty as $key => $item)
-                                    @if($item == $items->detail)
-                                        checked
-                                    @endif
-                                @endforeach
-                                type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">
-                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>
-                        @endforeach
+
+{{--                        <label for="title">Chọn màu</label>--}}
+{{--                        <select class="form-control js-search-brand" id="colorProduct" name="colorProduct">--}}
+
+{{--                            <option value=""></option>--}}
+{{--                            @foreach($color as $keys =>$items)--}}
+{{--                                <option name="{{$items->id}}" value="{{$items->detail}}">{{$items->detail}}</option>--}}
+
+{{--                            @endforeach--}}
+{{--                        </select>--}}
+
+{{--                        <label for="title">Màu</label>--}}
+{{--                        @foreach($color as $keys =>$items)--}}
+{{--                            <input--}}
+{{--                                @foreach($colorProperty as $key => $item)--}}
+{{--                                    @if($item == $items->detail)--}}
+{{--                                        checked--}}
+{{--                                    @endif--}}
+{{--                                @endforeach--}}
+{{--                                type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">--}}
+{{--                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>--}}
+{{--                        @endforeach--}}
                     </div>
                     <div class="right__inputWrapper">
                         <label for="title">size</label>

@@ -18,6 +18,7 @@ class AdminController extends Controller
     {
         $infoAdmin = DB::table('admins')
             ->where('status','1')
+            ->where('id', '=', $id)
             ->first();
 //        dd($infoAdmin);
         $data['username'] = $infoAdmin->username;
@@ -59,6 +60,5 @@ class AdminController extends Controller
             $request->session()->flash('mess','Update thông tin không thành công');
             return redirect(route('admin.profile.index'));
         }
-        return 1;
     }
 }
