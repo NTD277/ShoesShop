@@ -79,7 +79,7 @@
                                         <td data-label="Số lượng">
                                             <div class="quantity-buy">
                                                 <div class="sub btn-cart">-</div>
-                                                <input class="quantity-number" value="1" min="0" max="100">
+                                                <input class="quantity-number" type="number" value="1" min="1" max="100">
                                                 <div class="add btn-cart">+</div>
                                             </div>
                                         </td>
@@ -136,7 +136,13 @@
             totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
             quantity.value = qty;
         })
+        quantity.addEventListener("keypress",(e)=>{
+            if(e.key === 'Enter'){
+                totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}*quantity.value) + ' đ';
+                totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
 
+            }
+        })
 
         @endforeach
     })
