@@ -200,9 +200,9 @@
                             <img class="avt-cus" src="https://scontent.fhan2-2.fna.fbcdn.net/v/t1.0-9/118592620_1735638136590577_536306083793923942_o.jpg?_nc_cat=111&ccb=2&_nc_sid=a4a2d7&_nc_ohc=aW2NOEGnqDoAX9U57Uv&_nc_ht=scontent.fhan2-2.fna&oh=88a006eb2ff54f646e24922a0b8586c8&oe=5FE0431D" alt="">
                         </div>
                         @if(session('idCustomer'))
-                        <div class="name-customer">
+                        <a href="#" class="name-customer">
                             {{session('usernameCustomer')}}
-                        </div>
+                        </a>
                         @endif
                         <div class="button-logout">
                             <a class="logout" href="{{asset(route('fr.logout'))}}">Đăng xuất</a>
@@ -210,14 +210,14 @@
                     </div>
                 </li>
                 </li>
-                <li class="header__topbar-item">
-                    <a href="{{route('fr.cart')}}" class="header__topbar-item-link">
+{{--                <li class="header__topbar-item">--}}
+{{--                    <a href="{{route('fr.cart')}}" class="header__topbar-item-link">--}}
 
-                        <i class="fas fa-shopping-cart header__topbar-item-icon"></i>
-                        <span class="header__topbar-item-nameicon">Giỏ hàng</span>
-                        <span class="header__topbar-item-count">(0)</span>
-                    </a>
-                </li>
+{{--                        <i class="fas fa-shopping-cart header__topbar-item-icon"></i>--}}
+{{--                        <span class="header__topbar-item-nameicon">Giỏ hàng</span>--}}
+{{--                        <span class="header__topbar-item-count">(0)</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
             </ul>
 
         </div>
