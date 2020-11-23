@@ -282,7 +282,12 @@
                 <div class="row">
                     <div class="col col-lg-12 mt-24 ">
                         <div class="home-right ">
-                            <span style="font-size: 1.3rem;font-weight:600">Tất cả sản phẩm  >>  {{$title}}</span>
+                            <span style="font-size: 1.3rem;font-weight:600">Tất cả sản phẩm @if($title != "Trang chủ")
+                                    >>  {{$title}}
+                                @else
+                                    @endif
+
+                            </span>
                             <div class="sort-home">
                                 <div>Sắp xếp theo :
 {{--                                    <h1>{{$select}}</h1>--}}
