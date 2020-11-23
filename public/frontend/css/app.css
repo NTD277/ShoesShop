@@ -704,7 +704,7 @@ li.header__topbar-item.wrapper-customer:hover > .info-customer{
     position: absolute;
     background-color: white;
     top: 30px;
-    width: 200px;
+    width: 250px;
     right: 0;
     z-index: 1000;
     display: flex;
@@ -738,15 +738,16 @@ li.header__topbar-item.wrapper-customer:hover > .info-customer{
     left: 0;
 }
 img.avt-cus{
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
-.name-customer {
+
+.name-customer a{
+
     font-size: 12px;
     color: black;
 }
-
 .button-logout {
     margin-top: 10px;
     border-top: 1px solid #e0e0e0;

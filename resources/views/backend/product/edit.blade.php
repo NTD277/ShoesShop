@@ -2,7 +2,22 @@
 @push('stylesheets')
     <link type="text/css" rel="stylesheet" href="{{asset('backend/css/image-uploader.min.css')}}">
     <link type="text/css" rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" type="text/css">
+    <style lang="scss">
+        .right-checkbox-wrapper{
+            display: flex;
+            margin: 4px 0;
+        }
+        input[type=checkbox]{
+            width: 20px;
+            height: 20px;
+            transition: 1s;
+            margin:0 8px;
 
+        }
+        .image-uploader{
+
+        }
+    </style>
 @endpush
 @section('content')
     <div class="right">
@@ -64,17 +79,32 @@
 {{--                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>--}}
 {{--                        @endforeach--}}
                     </div>
+{{--                    <div class="right__inputWrapper">--}}
+{{--                        <label for="title">size</label>--}}
+{{--                        @foreach($size as $keys =>$items)--}}
+{{--                            <input--}}
+{{--                                @foreach($sizeProperty as $key => $item)--}}
+{{--                                @if($item == $items->detail)--}}
+{{--                                checked--}}
+{{--                                @endif--}}
+{{--                                @endforeach--}}
+{{--                                type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">--}}
+{{--                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
                     <div class="right__inputWrapper">
-                        <label for="title">size</label>
+                        <label>Chọn size</label>
                         @foreach($size as $keys =>$items)
-                            <input
-                                @foreach($sizeProperty as $key => $item)
-                                @if($item == $items->detail)
-                                checked
-                                @endif
-                                @endforeach
-                                type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">
-                            <lable for="{{$items->detail}}">{{$items->detail}}</lable>
+
+                            <div class="right-checkbox-wrapper">
+                                <input @foreach($sizeProperty as $key => $item)
+                                       @if($item == $items->detail)
+                                       checked
+                                       @endif
+                                       @endforeach
+                                       type="checkbox" name="{{$items->detail}}" value="{{$items->detail}}">
+                                <lable for="{{$items->id}}">{{$items->detail}}</lable>
+                            </div>
                         @endforeach
                     </div>
                     <div class="right__inputWrapper">

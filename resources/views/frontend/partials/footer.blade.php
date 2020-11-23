@@ -114,7 +114,7 @@
         <div class="row">
             <div class="col col-lg-12">
                 <span class="design-by">
-                    © DESIGN BY TUNGTRINH99
+                    © DESIGN BY NHOMMOT
                 </span>
             </div>
         </div>

@@ -26,7 +26,7 @@
     }
 
     .btn {
-        display: inline-block;
+
         padding: 6px 12px;
         margin-bottom: 0;
         font-size: 14px;
@@ -36,8 +36,9 @@
         white-space: nowrap;
         vertical-align: middle;
         display: flex;
+        justify-content: center;
         align-items: center;
-        width: 266px;
+        width: 130px;
     }
 
 
@@ -162,7 +163,7 @@
                             </div>
                         </div>
                         <div class="right-footer">
-                            <a href="#">Quay lại giỏ hàng</a>
+                            <a href="/">Quay lại trang chủ</a>
                             <button type="submit" class="btn continue-method-shopping" >Đặt hàng</button>
                         </div>
 

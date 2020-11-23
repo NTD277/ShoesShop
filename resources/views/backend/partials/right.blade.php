@@ -6,25 +6,25 @@
         <div class="right__title">Bảng điều khiển</div>
         <p class="right__desc">Bảng điều khiển</p>
         <div class="right__cards">
-            <a class="right__card" href="view_product.html">
+            <a class="right__card" href="/admin/product">
                 <div class="right__cardTitle">Sản Phẩm</div>
                 <div class="right__cardNumber">{{$sumProduct}}</div>
                 <div class="right__cardDesc">Xem Chi Tiết <img src="{{asset('backend/assets/arrow-right.svg')}}" alt=""></div>
             </a>
-            <a class="right__card" href="view_customers.html">
-                <div class="right__cardTitle">Khách Hàng</div>
-                <div class="right__cardNumber">{{$sumCustomer}}</div>
-                <div class="right__cardDesc">Xem Chi Tiết <img src="{{asset('backend/assets/arrow-right.svg')}}" alt=""></div>
-            </a>
-            <a class="right__card" href="view_p_category.html">
+{{--            <a class="right__card" href="view_customers.html">--}}
+{{--                <div class="right__cardTitle">Khách Hàng</div>--}}
+{{--                <div class="right__cardNumber">{{$sumCustomer}}</div>--}}
+{{--                <div class="right__cardDesc">Xem Chi Tiết <img src="{{asset('backend/assets/arrow-right.svg')}}" alt=""></div>--}}
+{{--            </a>--}}
+            <a class="right__card" href="/admin/brand">
                 <div class="right__cardTitle">Thương hiệu</div>
                 <div class="right__cardNumber">{{$sumBrand}}</div>
                 <div class="right__cardDesc">Xem Chi Tiết <img src="{{asset('backend/assets/arrow-right.svg')}}" alt=""></div>
             </a>
-            <a class="right__card" href="view_orders.html">
+            <a class="right__card" href="/admin/dashboard">
                 <div class="right__cardTitle">Đơn Hàng</div>
                 <div class="right__cardNumber">{{$sumOrder}}</div>
-                <div class="right__cardDesc">Xem Chi Tiết <img src="{{asset('backend/assets/arrow-right.svg')}}" alt=""></div>
+
             </a>
         </div>
         <div class="right__table">
