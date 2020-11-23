@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class CustomerController extends Controller
+class CustomerController extends BaseController
 {
     public function index(Request $request)
     {
@@ -19,7 +19,12 @@ class CustomerController extends Controller
         $data['phone'] = $info->phone;
         $data['email'] = $info->email;
         $data['address'] = $info->address;
+        $data['status'] = $info->status;
 //        dd($data);
         return view('frontend.customer.index',$data,compact('title'));
+    }
+    public function update(Request $request)
+    {
+        dd($request->all());
     }
 }

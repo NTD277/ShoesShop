@@ -27,6 +27,7 @@ Route::group([
     Route::get('/login','LoginController@index')->name('login');
     Route::get('/logout','LoginController@logout')->name('logout');
     Route::get('/profile','CustomerController@index')->name('profile');
+    Route::get('/handle-profile','CustomerController@update')->name('profile.handle.update');
     Route::get('/handle-login','LoginController@handleLogin')->name('handle.login');
     Route::get('/cart','CartController@index')->name('cart');
     Route::get('/order','OrderController@index')->name('order');

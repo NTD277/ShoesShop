@@ -162,7 +162,7 @@
                         </div>
                         <div class="right-footer">
                             <a href="#">Quay lại giỏ hàng</a>
-                            <button type="submit" class="btn continue-method-shopping" >Tiếp tục đến phương thức thanh toán</button>
+                            <button type="submit" class="btn continue-method-shopping" >Đặt hàng</button>
                         </div>
 
                     </div>
