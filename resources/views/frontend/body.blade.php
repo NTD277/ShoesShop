@@ -356,7 +356,7 @@
                                 <div class="button__product-action">
                                     <a class="btn__product button__product-action--show-details"
                                        href="/products/{{$item->slug}}">Xem Chi Tiết</a>
-                                    <a class="btn__product button__product-action--add-cart" href="#">Thêm vào giỏ</a>
+                                    <a class="btn__product button__product-action--add-cart" href="{{route('fr.cart',['id' => $item->id])}}">Thêm vào giỏ</a>
                                 </div>
                             </div>
 

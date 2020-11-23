@@ -72,30 +72,32 @@
                                 <tr>
                                     @foreach(session('cart') as $keys => $items)
                                         <td data-label="STT">
-                                            <img src="https://giaygiare.vn/upload/sanpham/adidas-ultra-boost-20-space-race-grey-1-1.jpg">
+                                            <img src="{{asset('upload/image/product/' . $items->avatar)}}">
                                         </td>
-                                        <td data-label="Tên sản phẩm">{{$items->name}}Y</td>
-                                        <td data-label="Giá">{{$items->price}}</td>
+                                        <td data-label="Tên sản phẩm">{{$items->name}}</td>
+                                        <td data-label="Giá">{{number_format($items->price)}} đ</td>
                                         <td data-label="Số lượng">
-                                            <input type="number" value="1" id="quantity" name="quantity" min="1" max="100">
+                                            <div class="quantity-buy">
+                                                <div class="sub btn-cart">-</div>
+                                                <input class="quantity-number" value="1" min="0" max="100">
+                                                <div class="add btn-cart">+</div>
+                                            </div>
                                         </td>
-                                        <td data-label="Tổng tiền">{{$items->price }}</td>
-                                        <td data-label="Xoá" class="right__iconTable"><a href=""><img src="assets/icon-trash-black.svg" alt=""></a></td>
+                                        <td class="total-item-money" data-label="Tổng tiền">{{number_format($items->price)}} đ</td>
+                                        <td data-label="Xoá" class="right__iconTable"><a href=""><img src="{{asset('backend/assets/icon-trash-black.svg')}}" alt=""></a></td>
                                     @endforeach
                                 </tr>
                                 </tbody>
-                                <tfoot>
 
-                                <tr>
-                                    <td colspan="1" style="border: none;background: #f5f6fa;"><a href="#" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></td>
-                                    <td style="border: none;background: #f5f6fa;"></td>
-                                    <td colspan="2" style="border: none;background: #f5f6fa;"><strong>Tổng tiền 500.000.000 đ</strong></td>
-                                    <td colspan="2" style="border: none;background: #f5f6fa;"><a href="#" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></td>
 
-                                </tr>
-                                </tfoot>
 
                             </table>
+                            <div class="footer-cart">
+                                <div class="total-order-money"><strong>{{number_format($items->price)}} đ</strong></div>
+                                <div  class="continue-shopping"><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></div>
+                                <div  class="pay"><a href="#" class="btn btn-success btn-block">Thanh toán <i class="fa fa-angle-right"></i></a></div>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -104,6 +106,40 @@
     </div>
 </div>
 
-<script src="{{asset('backend/js/main.js')}}"></script>
+<script>
+    window.addEventListener("load", () => {
+        @foreach(session('cart') as $keys => $items)
+        const subCart = document.querySelector('.sub');
+        const addCart = document.querySelector('.add');
+        const quantity =  document.querySelector('.quantity-number');
+        const totalItemMoney = document.querySelector('.total-item-money');
+        const totalOrderMoney = document.querySelector('.total-order-money');
+
+        var qty =1;
+        function number_format ($number , $decimals = 0 , $dec_point = '.' , $thousands_sep = ',' ) {}
+
+        subCart.addEventListener('click',()=>{
+            if(quantity.value == 1){
+                quantity.value = 1;
+            }
+            else {
+                qty--;
+                totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}*qty) + ' đ';
+                totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
+                quantity.value = qty;
+
+            }
+        })
+        addCart.addEventListener('click',()=>{
+            qty++;
+            totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}*qty) + ' đ';
+            totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
+            quantity.value = qty;
+        })
+
+
+        @endforeach
+    })
+</script>
 </body>
 </html>

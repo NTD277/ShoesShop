@@ -1183,3 +1183,42 @@ body {
   width: 100%;
 }
 /*# sourceMappingURL=main.css.map */
+.total-money {
+    margin-top: 30px;
+}
+
+.continue-shopping {
+    margin: 20px 0;
+
+}
+.footer-cart{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 30px;
+}
+.quantity-buy {
+    display: flex;
+    /* text-align: center; */
+    justify-content: center;
+}
+
+.quantity-buy {}
+
+.quantity-number {
+   text-align: center;
+    width: 50px;
+    border-radius: 0;
+    height: 35px;
+    margin: 0 4px;
+}
+.btn-cart {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    background-color: #e0e0e0;
+    border: 1px solid #b2b9ce;
+    cursor: pointer;
+    width: 35px;
+    justify-content: center;
+}
