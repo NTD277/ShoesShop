@@ -403,19 +403,9 @@
             const bannerImage =document.querySelector('.banner-image');
             const bannerPre = document.querySelector('.banner-pre');
             const bannerNext = document.querySelector('.banner-next');
-            const arrayBanner = ['upload/image/banner/giay-adidas-ultra-boost-20-new-2020.jpg','upload/image/banner/giay-sneaker-nike-jordan-1-high-mid-low.png','upload/image/banner/sale-black-friday-2020-tuloshop.png','upload/image/banner/sieu-pham-sneaker-nike-air-force-1-x-g-dragon-para-noise-1-1.jpg'];
-            var index = 0;
-            function slideShow(){
-                setTimeout(function (){
-                    index++;
-                    if(index == arrayBanner.length-1){
-                        index=0;
-                    }
-                    bannerImage.src = arrayBanner[index];
-                    slideShow();
-                },3000)
-            }
-            slideShow();
+            const arrayBanner = ['https://giaygiare.vn/upload/banner/sale-black-friday-2020-tuloshop.png','https://giaygiare.vn/upload/banner/giay-sneaker-nike-jordan-1-high-mid-low.png','https://giaygiare.vn/upload/banner/giay-adidas-ultra-boost-20-new-2020.jpg','https://giaygiare.vn/upload/banner/cap-nhat-nhung-mau-yeezy-moi-nhat-2019.png'];
+            console.log(bannerImage.src)
+
             bannerPre.addEventListener('click',()=>{
                 if(index==0){
                     index=arrayBanner.length-1;
@@ -432,12 +422,28 @@
                     index=0;
                     index++;
                     bannerImage.src = arrayBanner[index];
+
                 }
                 else {
                     index++;
                     bannerImage.src = arrayBanner[index];
                 }
             })
+            var index = 0;
+            function slideShow(){
+                setTimeout(function (){
+                    if(index == arrayBanner.length-1){
+                        index=0;
+                    }
+                    index++;
+                    bannerImage.src = arrayBanner[index];
+                    console.log(bannerImage.src)
+
+                    slideShow();
+                },3000)
+            }
+            slideShow();
+
 
         })
     </script>
