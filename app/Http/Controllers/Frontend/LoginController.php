@@ -65,4 +65,11 @@ class LoginController extends Controller
             return redirect(route('fr.login'));
         }
     }
+
+    public function logout(Request $request)
+    {
+        $request->session()->forget('usernameCustomer');
+        $request->session()->forget('idCustomer');
+        return redirect(route('fr.home'));
+    }
 }

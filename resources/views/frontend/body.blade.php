@@ -365,6 +365,7 @@
     {{--                {{/each}}--}}
                     @endforeach
                 </div>
+{{--                {{ $$newProduct->links() }}--}}
             </div>
 
 

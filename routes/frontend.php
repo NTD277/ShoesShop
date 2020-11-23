@@ -25,6 +25,8 @@ Route::group([
     Route::get('/registration','LoginController@registration')->name('registration');
     Route::get('/handle-registration','LoginController@handleRegistration')->name('handle.registration');
     Route::get('/login','LoginController@index')->name('login');
+    Route::get('/logout','LoginController@logout')->name('logout');
     Route::get('/handle-login','LoginController@handleLogin')->name('handle.login');
     Route::get('/cart','CartController@index')->name('cart');
+    Route::get('search/{keyword?}', 'SearchController@index')->name('search');
 });

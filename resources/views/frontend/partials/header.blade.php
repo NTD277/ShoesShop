@@ -205,7 +205,7 @@
                         </div>
                         @endif
                         <div class="button-logout">
-                            <a class="logout" href="">Đăng xuất</a>
+                            <a class="logout" href="{{asset(route('fr.logout'))}}">Đăng xuất</a>
                         </div>
                     </div>
                 </li>
@@ -250,27 +250,25 @@
 
                                 <div class="col col-lg-3">
                                     <div class="header__main-category-item">
-{{--                                        @foreach($data['productHeader'] as $keys => $items)--}}
-{{--                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"--}}
-{{--                                               class="header__main-category-item-link">{{$items->name}}</a>--}}
-{{--                                        @endforeach--}}
+                                        @foreach($data['productHeaderAdidas'] as $keys => $items)
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
+                                               class="header__main-category-item-link">{{$items->name}}</a>
+                                        @endforeach
 
                                     </div>
                                 </div>
-                                @foreach($data['productHeader'] as $keys => $items)
+                                @foreach($data['productHeaderAdidas'] as $keys => $items)
                                 <div class="col col-lg-3">
                                     <div class="header__main-category-item">
 
-{{--                                        <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/91a8a40254fe4ce6839cab6501302fd0_9366/Giay_UltraBoost_20_Mau_hong_FW8728_01_standard.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                                                @foreach($newProductHeader as $keys => $items)--}}
-{{--                                                    <span>{{$items->name}}</span>--}}
-{{--                                                @endforeach--}}
-{{--                                            </span>--}}
-{{--                                        </a>--}}
+                                        <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
+                                            <img class="header__main-category-item-image"
+                                                 src="{{asset('upload/image/product/' . $items->avatar)}}"
+                                                 alt="">
+                                            <span class="header__main-category-item-text">
+
+                                            </span>
+                                        </a>
                                     </div>
                                 </div>
                                 @endforeach
@@ -280,146 +278,82 @@
                         </div>
                     </li>
 
-{{--                    <li class="header__main-item">--}}
-{{--                        <a href="#" class="header__main-item-link">Nike</a>--}}
-{{--                        <i class="fas fa-chevron-down header__main-item-icon"></i>--}}
-{{--                        <div class="header__main-category">--}}
-{{--                            <div class="header__main-category-list">--}}
+                    <li class="header__main-item">
+                        <a href="#" class="header__main-item-link">Converse</a>
+                        <i class="fas fa-chevron-down header__main-item-icon"></i>
+                        <div class="header__main-category">
+                            <div class="header__main-category-list">
 
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-{{--                                        @foreach($newProductHeader2 as $keys => $items)--}}
-{{--                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"--}}
-{{--                                               class="header__main-category-item-link">{{$items->name}}</a>--}}
-{{--                                        @endforeach--}}
-{{--                                        --}}{{--                                        <a href="" class="header__main-category-item-link">Nike Air Max 90 </a>--}}
-{{--                                        --}}{{--                                        <a href="" class="header__main-category-item-link">Nike Air Force 1</a>--}}
-{{--                                        --}}{{--                                        <a href="" class="header__main-category-item-link">Nike Jordan 1</a>--}}
-{{--                                        --}}{{--                                        <a href="" class="header__main-category-item-link">Nike Uptempo</a>--}}
-{{--                                        --}}{{--                                        <a href="" class="header__main-category-item-link">Nike Cortez</a>--}}
+                                <div class="col col-lg-3">
+                                    <div class="header__main-category-item">
+                                        @foreach($data['productHeaderConverse'] as $keys => $items)
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
+                                               class="header__main-category-item-link">{{$items->name}}</a>
+                                        @endforeach
 
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
+                                    </div>
+                                </div>
+                                @foreach($data['productHeaderConverse'] as $keys => $items)
+                                    <div class="col col-lg-3">
+                                        <div class="header__main-category-item">
 
-{{--                                        <a href="" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/q8i3x6lqfasvvojvvits/air-jordan-1-low-shoe-6Q1tFM.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                        Air Jordan 1 Low--}}
-{{--                      </span>--}}
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
+                                                <img class="header__main-category-item-image"
+                                                     src="{{asset('upload/image/product/' . $items->avatar)}}"
+                                                     alt="">
+                                                <span class="header__main-category-item-text">
+                                            </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </li>
 
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-
-{{--                                        <a href="" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://static.nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/44ccc755-d470-46ae-9a93-b5205ea302dc/air-force-1-07-shoe-ZwfP5z.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                        Nike Air Force 1 '07--}}
-{{--                      </span>--}}
-
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-
-{{--                                        <a href="" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://c.static-nike.com/a/images/t_PDP_864_v1/f_auto,b_rgb:f5f5f5/azmihba3pidhx72i7div/air-max-97-shoe-EBZrb8.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                        Nike Air Max 97--}}
-{{--                      </span>--}}
-
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
-{{--                    <li class="header__main-item">--}}
-{{--                        <a href="#" class="header__main-item-link">Bitis Hunter</a>--}}
-{{--                        <i class="fas fa-chevron-down header__main-item-icon"></i>--}}
-{{--                        <div class="header__main-category">--}}
-{{--                            <div class="header__main-category-list">--}}
-
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-{{--                                        <a href="" class="header__main-category-item-link">Hunter</a>--}}
-{{--                                        <a href="" class="header__main-category-item-link">Giày thể thao</a>--}}
-{{--                                        <a href="" class="header__main-category-item-link">Giày đá bóng</a>--}}
-{{--                                        <a href="" class="header__main-category-item-link">Giày chạy bộ</a>--}}
-
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-
-{{--                                        <a href="" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://product.hstatic.net/1000230642/product/dsmh03400xmn_5__97ab4d643dd14faca4edf02a9d57ce26_1024x1024.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                        Biti's Hunter X Matcha--}}
-{{--                      </span>--}}
-
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-
-{{--                                        <a href="" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://product.hstatic.net/1000230642/product/02400cam__2__e1169f3ccb534dbea20e0b26e448a3a8_1024x1024.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                        Biti's Hunter Football--}}
-{{--                      </span>--}}
-
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <div class="col col-lg-3">--}}
-{{--                                    <div class="header__main-category-item">--}}
-
-{{--                                        <a href="" class="header__main-category-item-image-link">--}}
-{{--                                            <img class="header__main-category-item-image"--}}
-{{--                                                 src="https://product.hstatic.net/1000230642/product/9_4af2a89ef6a8461184dda8b5339a0787_1024x1024.jpg"--}}
-{{--                                                 alt="">--}}
-{{--                                            <span class="header__main-category-item-text">--}}
-{{--                        Biti's Hunter Street x Vietmax 2020--}}
-{{--                      </span>--}}
-
-{{--                                        </a>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </li>--}}
 
                     <li class="header__main-item">
-                        <a href="#" class="header__main-item-link">Giảm giá</a>
+                        <a href="#" class="header__main-item-link">Gucci</a>
+                        <i class="fas fa-chevron-down header__main-item-icon"></i>
+                        <div class="header__main-category">
+                            <div class="header__main-category-list">
 
+                                <div class="col col-lg-3">
+                                    <div class="header__main-category-item">
+                                        @foreach($data['productHeaderGucci'] as $keys => $items)
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}"
+                                               class="header__main-category-item-link">{{$items->name}}</a>
+                                        @endforeach
+
+                                    </div>
+                                </div>
+                                @foreach($data['productHeaderGucci'] as $keys => $items)
+                                    <div class="col col-lg-3">
+                                        <div class="header__main-category-item">
+
+                                            <a href="{{asset(route('fr.detail',['slug'=>$items->slug]))}}" class="header__main-category-item-image-link">
+                                                <img class="header__main-category-item-image"
+                                                     src="{{asset('upload/image/product/' . $items->avatar)}}"
+                                                     alt="">
+                                                <span class="header__main-category-item-text">
+                                            </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
                     </li>
 
                     </ul>
                 </div>
             </div>
             <div class="col col-lg-2 col-md-8 header__main--right hide-on-mobile">
-                <form class="header__search" action="/search">
-                    <input type="text" class="search--input" placeholder="Tìm kiếm ...">
-                    <input type="submit" class="btn-search" value="">
+                <form method="get" class="header__search" action="{{route('fr.search')}}">
+                    @csrf
+                    <input name="search" type="text" class="search--input" placeholder="Tìm kiếm ...">
+{{--                    <input type="submit" class="btn-search" value="search">--}}
+                    <button type="submit" class="btn-search"></button>
                 </form>
             </div>
             {{--            {{!-- <div class="col col-md-1  hide header__cart-tablet">--}}
@@ -516,12 +450,7 @@
             </div>
         </div>
     </div>
-    {{--    {{!-- <div class="header__search-mobile hide hide-on-tablet">--}}
-    {{--          <input type="text" placeholder="Tìm kiếm ..." class="header-search-mobile-input">--}}
-    {{--          <button class="header-search-mobile-button" >--}}
-    {{--            <i class="fas fa-search header__search-btn-icon"></i>--}}
-    {{--          </button>--}}
-    {{--        </div> --}}
+
 </div>
 <script>
     const cartMobile = document.querySelector('.cart-mobile > i');
