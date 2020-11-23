@@ -37,6 +37,7 @@ class BaseController extends Controller
         $route = Route::current();
         $data['slugBrand'] = $route->parameters['slug'] ?? '';
         $data['slugColor'] = $route->parameters['detailColor'] ?? '';
+        $data['slugSize'] = $route->parameters['detailSize'] ?? '';
         $data['select'] = $route->parameters['select'] ?? '';
         $data['newBrand'] = Brand::where('status',1)->get();
         $data['color'] = Property::where('status',1)->where('name','Màu')->get();

@@ -23,10 +23,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e78d7f73-3e41-409f-b48f-a82f1eaf3284" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/OrderController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/frontend/order/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/CustomerController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/frontend/customer/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/DashBoardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/DashBoardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Backend/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BaseController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BrandController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/BrandController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ColorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/ColorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/OrderController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/OrderController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Frontend/SizeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Frontend/SizeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/CheckAdminLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/CheckAdminLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/IsLoginedAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/IsLoginedAdmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/backend/partials/right.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/backend/partials/right.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/body.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/body.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/frontend/cart/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/cart/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/home/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/order/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/order/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/products/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/frontend.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/frontend.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -213,7 +230,7 @@
       <workItem from="1605599806544" duration="21302000" />
       <workItem from="1605838924476" duration="66036000" />
       <workItem from="1606055593165" duration="20513000" />
-      <workItem from="1606108259480" duration="6082000" />
+      <workItem from="1606108259480" duration="22951000" />
     </task>
     <task id="LOCAL-00001" summary="1116">
       <created>1605932235771</created>
@@ -285,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606113527142</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="thay up form order di">
+      <created>1606114416599</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1606114416599</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +338,8 @@
     <MESSAGE value="logout admin" />
     <MESSAGE value="max binh" />
     <MESSAGE value="up" />
-    <option name="LAST_COMMIT_MESSAGE" value="up" />
+    <MESSAGE value="thay up form order di" />
+    <option name="LAST_COMMIT_MESSAGE" value="thay up form order di" />
   </component>
   <component name="WindowStateProjectService">
     <state x="384" y="164" key="#Notifications" timestamp="1605933230589">
@@ -325,10 +350,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="95" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606061862844" />
-    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1606113526307">
+    <state x="115" y="0" key="CommitChangelistDialog2" timestamp="1606114415848">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606113526307" />
+    <state x="115" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606114415848" />
     <state x="421" y="95" key="FileChooserDialogImpl" timestamp="1606022664408">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -341,26 +366,26 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="435" y="215" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1605849847267" />
-    <state x="121" y="50" key="MergeDialog" timestamp="1606031223024">
+    <state x="121" y="50" key="MergeDialog" timestamp="1606138872543">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="121" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606031223024" />
-    <state x="903" y="179" key="NewPhpFileDialog" timestamp="1606114259799">
+    <state x="121" y="50" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1606138872543" />
+    <state x="903" y="179" key="NewPhpFileDialog" timestamp="1606114824865">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="903" y="179" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1606114259799" />
+    <state x="903" y="179" key="NewPhpFileDialog/0.0.1280.680@0.0.1280.680" timestamp="1606114824865" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1605931208736">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1605931208736" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606113531939">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1606114419590">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606113531939" />
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606113504212">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606114419590" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606138843089">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606113504212" />
+    <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606138843089" />
     <state x="346" y="73" width="589" height="534" key="find.popup" timestamp="1605518485115">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -381,6 +406,11 @@
           <url>file://$PROJECT_DIR$/resources/views/frontend/partials/header.blade.php</url>
           <line>271</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/backend/admin/edit.blade.php</url>
+          <line>21</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

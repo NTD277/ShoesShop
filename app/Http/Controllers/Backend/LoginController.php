@@ -32,6 +32,7 @@ class LoginController extends Controller
             $request->session()->put('username', $infoAdmin['username']);
             $request->session()->put('id', $infoAdmin['id']);
             $request->session()->put('fullname', $infoAdmin['fullname']);
+            $request->session()->put('status', $infoAdmin['status']);
             // cho vao trang dashboard
             return redirect(route('admin.dashboard'));
         } else {

@@ -26,7 +26,13 @@ class CheckAdminLogin
     {
         $sessionID = $request->session()->get('id');
         $sessionID = is_numeric($sessionID) && $sessionID > 0 ? true :false;
-        return $sessionID;
+        $statusSession = $request->session()->get('status');
+        $statusSession = is_numeric($statusSession) && $statusSession > 0 ? true : false;
+        if ($sessionID && $statusSession){
+            return true;
+        }else{
+            return false;
+        }
     }
 
 }

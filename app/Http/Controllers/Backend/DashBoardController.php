@@ -16,6 +16,10 @@ class DashBoardController extends Controller
         $sumCustomer = DB::table('customers')->count();
         $sumBrand = DB::table('brands')->count();
         $sumOrder = DB::table('orders')->count();
-        return view('backend.partials.right',compact('title','sumProduct','sumCustomer','sumBrand','sumOrder'));
+        $order = DB::table('orders')->select('orders.*','orderdetails.idProduct','orderdetails.qty')
+            ->join('orderdetails','orderdetails.id','=', 'orders.id')
+            ->get();
+//        dd($order);
+        return view('backend.partials.right',compact('title','sumProduct','sumCustomer','sumBrand','sumOrder','order'));
     }
 }

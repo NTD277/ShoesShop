@@ -43,11 +43,10 @@ class SizeController extends BaseController
     }
     public function index($detail,$select = null)
     {
-        $title = 'size';
+        $title =  strtoupper($detail);
         $newProduct = $this->SelectBySize($detail);
         if (!empty($select)) {
             $newProduct = $this->typeOfSelect($select, $detail);
-
         }
         return view('frontend.body', compact('title', 'newProduct','detail','select'));
     }

@@ -4,8 +4,12 @@
 {{--    </header>--}}
 @section('content')
     <div class="container margin-top">
+        @foreach($newProduct as $keys => $items)
+        <h2><a href="{{asset(route('fr.home'))}}">Trang chủ</a> > <a href="#">{{$items->name}}</a></h2>
+        @endforeach
         <div class="row">
             @foreach($newProduct as $keys => $items)
+
                 <div class="col col-lg-1 hide-on-mobile-tablet prodict-image-wrap-pc">
                     @foreach($imageProduct as $k => $i)
                         <div class="detail-main-image-wrap mbt-12">

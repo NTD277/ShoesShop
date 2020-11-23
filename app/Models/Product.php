@@ -243,4 +243,93 @@ class Product extends Model
         }
         return $newProduct;
     }
+
+    /////////////////////////////////
+    public function UpToDownSize($size = null)
+    {
+        $newProduct = [];
+        if (empty($size)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderByDesc('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'size')
+                ->where('products.status', 1)
+                ->where('properties.detail', $size)
+                ->orderByDesc('products.price')
+                ->get();
+        }
+        return $newProduct;
+    }
+
+    public function DownToUpSize($size = null)
+    {
+        $newProduct = [];
+        if (empty($size)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderBy('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'size')
+                ->where('products.status', 1)
+                ->where('properties.detail', $size)
+                ->orderBy('products.price')
+                ->get();
+        }
+        return $newProduct;
+    }
+
+    public function ZToASize($size = null)
+    {
+        $newProduct = [];
+        if (empty($size)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderByDesc('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'size')
+                ->where('products.status', 1)
+                ->where('properties.detail', $size)
+                ->orderByDesc('products.name')
+                ->get();
+        }
+        return $newProduct;
+    }
+
+    public function AToZSize($size = null)
+    {
+        $newProduct = [];
+        if (empty($size)){
+            $newProduct = DB::table('products')->select('products.*')
+                ->where('status',1)
+                ->orderBy('price')
+                ->get();
+        }
+        else {
+            $newProduct = DB::table('products')->select('products.*')
+                ->join('productproperties','productproperties.idProduct','=','products.id')
+                ->join('properties','properties.id', '=' ,'productproperties.idProperty')
+                ->where('properties.name','=', 'size')
+                ->where('products.status', 1)
+                ->where('properties.detail', $size)
+                ->orderBy('products.name')
+                ->get();
+        }
+        return $newProduct;
+    }
 }

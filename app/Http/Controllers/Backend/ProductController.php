@@ -210,6 +210,7 @@ class ProductController extends Controller
         $idImageProducts = DB::table('image_products')
         ->select('id')
         ->where('idProduct', $id)->get();
+//        dd($idImageProducts);
         $nameBrand = $request->brandProduct;
         $dataImage = $request->file('images');
         foreach ($dataImage as $keys =>$items)
@@ -238,14 +239,6 @@ class ProductController extends Controller
             'updated_at' => date('Y-m-d H:i:s')
         ]);
 
-//        foreach ($data as $keys => $items) {
-//            $updateProductProperties = DB::table('productproperties')
-//                ->where('idProduct','=',$id)
-//                ->update([
-//                'idProperty' => $items,
-//                'updated_at' => date('Y-m-d H:i:s')
-//            ]);
-//        }
 
         foreach ($imageProduct as $keys =>$items){
             $updateImageProducts = DB::table('image_products')
@@ -256,7 +249,7 @@ class ProductController extends Controller
                 'updated_at' => date('Y-m-d H:i:s')
             ]);
         }
-        if ($updateProduct && $updateImageProducts){
+        if ($updateProduct){
             $request->session()->flash('mess','Sửa thành công');
             return redirect(route('admin.product.index'));
         }else{

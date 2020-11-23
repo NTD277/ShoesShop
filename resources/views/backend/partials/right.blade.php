@@ -34,60 +34,36 @@
                     <thead>
                     <tr>
                         <th>STT</th>
-                        <th style="text-align: left;">Tài khoản</th>
+                        <th>Tên khách hàng</th>
                         <th>Số Hoá Đơn</th>
                         <th>ID Sản Phẩm</th>
                         <th>Số Lượng</th>
-                        <th>Kích thước</th>
+                        <th>Tổng tiền</th>
                         <th>Trạng Thái</th>
                     </tr>
                     </thead>
 
                     <tbody>
+                    @foreach($order as $keys => $items)
                     <tr>
-                        <td data-label="STT">1</td>
-                        <td data-label="Email" style="text-align: left;">chibaosinger@gmail.com</td>
-                        <td data-label="Số Hoá Đơn">6577544</td>
-                        <td data-label="ID Sản Phẩm">2</td>
-                        <td data-label="Số Lượng">1</td>
-                        <td data-label="Kích thước">Trung Bình</td>
+                        <td data-label="STT">{{$keys +1 }}</td>
+                        <td data-label="Tên">{{$items->namePerson}}</td>
+                        <td data-label="Số Hoá Đơn">{{$items->id}}</td>
+                        <td data-label="ID Sản Phẩm">{{$items->idProduct}}</td>
+                        <td data-label="Số Lượng">{{$items->qty}}</td>
+                        <td data-label="Tổng tiền">{{$items->price}}</td>
                         <td data-label="Trạng Thái">
-                            Đã Thanh Toán
+                            @if($items->status == 1)
+                                Chờ xử lý
+                            @elseif($items->status == 1)
+                                Hủy
+                            @else Hoàn tất
+
+                            @endif
                         </td>
                     </tr>
-                    <tr>
-                        <td data-label="STT">2</td>
-                        <td data-label="Email" style="text-align: left;">midu@gmail.com</td>
-                        <td data-label="Số Hoá Đơn">4578644</td>
-                        <td data-label="ID Sản Phẩm">4</td>
-                        <td data-label="Số Lượng">2</td>
-                        <td data-label="Kích thước">Nhỏ</td>
-                        <td data-label="Trạng Thái">
-                            Đang Xử Lý
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-label="STT">3</td>
-                        <td data-label="Email" style="text-align: left;">miku@gmail.com</td>
-                        <td data-label="Số Hoá Đơn">2657544</td>
-                        <td data-label="ID Sản Phẩm">3</td>
-                        <td data-label="Số Lượng">5</td>
-                        <td data-label="Kích thước">Lớn</td>
-                        <td data-label="Trạng Thái">
-                            Đang Xử Lý
-                        </td>
-                    </tr>
-                    <tr>
-                        <td data-label="STT">4</td>
-                        <td data-label="Email" style="text-align: left;">dangthimydung@gmail.com</td>
-                        <td data-label="Số Hoá Đơn">9659544</td>
-                        <td data-label="ID Sản Phẩm">8</td>
-                        <td data-label="Số Lượng">12</td>
-                        <td data-label="Kích thước">Trung Bình</td>
-                        <td data-label="Trạng Thái">
-                            Đang Xử Lý
-                        </td>
-                    </tr>
+                    @endforeach
+
                     </tbody>
                 </table>
             </div>

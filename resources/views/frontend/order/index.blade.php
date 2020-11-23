@@ -137,41 +137,56 @@
 <div class="wrapper">
     <div class="container">
         <div class="dashboard">
+            <form action="{{route('fr.handle.order')}}" method="post" >
             <div class="row" style="height: 100%">
                 <div class="col col-lg-6" style="height: 100%">
+
+                        @csrf
+                        @method('GET')
                     <div class="right">
                         <div class="right__content">
                             <div class="right__title">Xem giỏ hàng</div>
                             <p class="right__desc">Thông tin giao hàng</p>
+                            @if (session('mess'))
+                                <div class="alert alert-info">
+                                    <h3 style="text-align: center">{{session('mess')}}</h3>
+                                </div>
+                            @endif
                             <div class="form-info">
-                                <input type="text" placeholder="Họ và tên">
-                                <input type="email" placeholder="Email">
-                                <input type="number" placeholder="Số điện thoại">
-                                <input type="text" placeholder="Địa chỉ">
+                                <input name="fullname" type="text" placeholder="Họ và tên" value="{{$infoCustomer->fullname}}">
+                                <input name="email" type="email" placeholder="Email" value="{{$infoCustomer->email}}">
+                                <input name="phone" type="number" placeholder="Số điện thoại" value="{{$infoCustomer->phone}}">
+                                <input name="address" type="text" placeholder="Địa chỉ" value="{{$infoCustomer->address}}">
 
                             </div>
                         </div>
                         <div class="right-footer">
                             <a href="#">Quay lại giỏ hàng</a>
-                            <a class="btn continue-method-shopping" href="">Tiếp tục đến phương thức thanh toán</a>
+                            <button type="submit" class="btn continue-method-shopping" >Tiếp tục đến phương thức thanh toán</button>
                         </div>
 
                     </div>
+
                 </div>
                 <div class="col col-lg-6">
                     <div class="right-info">
+
                         @foreach(session('cart') as $keys => $items)
                             <div class="image-product-cart">
                                 <div class="wrapper-info-image">
                                     <img src="{{asset('upload/image/product/' . $items->avatar)}}">
                                     <span>{{$items->name}}</span>
+                                    <input type="hidden" name="nameProduct" value="{{$items->name}}">
+                                    <input type="hidden" name="idProduct" value="{{$items->id}}">
                                 </div>
 
                                 <div class="price-product">
                                     {{number_format($items->price)}} đ
                                     <div class="quantity">
                                         <span>Số lượng : </span>
-                                        <span>1</span>
+                                        <span>{{$qty}}</span>
+                                        <input type="hidden" name="qtyProduct" value="{{$qty}}">
+                                        <input type="hidden" name="priceProduct" value="{{$items->price}}">
                                     </div>
                                 </div>
                             </div>
@@ -183,13 +198,14 @@
                                 </div>
                                 <div class="cache-money">
                                     <span>Tạm tính </span>
-                                    <span>{{number_format($items->price)}} đ</span>
+                                    <span>{{number_format($items->price * $items->qty)}} đ</span>
+                                    <input type="hidden" name="sumMoney" value="{{$items->price * $items->qty +40000}}">
                                 </div>
 
                             </div>
                             <div class="total-money">
                                 <span>Tổng tiền</span>
-                                <span>{{number_format($items->price)}} đ</span>
+                                <span>{{number_format($items->price * $items->qty + 40000)}} đ</span>
                             </div>
 
                         @endforeach
@@ -197,7 +213,7 @@
 
                 </div>
             </div>
-
+            </form>
         </div>
     </div>
 </div>

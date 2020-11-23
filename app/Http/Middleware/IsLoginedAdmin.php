@@ -18,7 +18,10 @@ class IsLoginedAdmin
     {
         $idSession = $request->session()->get('id');
         $idSession = is_numeric($idSession) && $idSession > 0 ? true : false;
-        if ($idSession){
+        $statusSession = $request->session()->get('status');
+        $statusSession = is_numeric($statusSession) && $statusSession > 0 ? true : false;
+
+        if ($idSession && $statusSession){
             return redirect()->route('admin.dashboard');
         }
         return $next($request);

@@ -43,7 +43,7 @@ class ColorController extends BaseController
     }
     public function index($detail,$select = null)
     {
-        $title = 'Color';
+        $title = strtoupper($detail);
         $newProduct = $this->SelectByColor($detail);
         if (!empty($select)) {
             $newProduct = $this->typeOfSelect($select, $detail);

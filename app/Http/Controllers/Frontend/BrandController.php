@@ -41,7 +41,7 @@ class BrandController extends BaseController
     public function index($slug,$select = null)
     {
 //        dd($slug);
-        $title = 'Brand';
+        $title = strtoupper($slug);
         $newProduct = $this->SelectByBrand($slug);
         if (!empty($select)) {
             $newProduct = $this->typeOfSelect($select, $slug);

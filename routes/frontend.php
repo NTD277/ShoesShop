@@ -26,8 +26,10 @@ Route::group([
     Route::get('/handle-registration','LoginController@handleRegistration')->name('handle.registration');
     Route::get('/login','LoginController@index')->name('login');
     Route::get('/logout','LoginController@logout')->name('logout');
+    Route::get('/profile','CustomerController@index')->name('profile');
     Route::get('/handle-login','LoginController@handleLogin')->name('handle.login');
     Route::get('/cart','CartController@index')->name('cart');
     Route::get('/order','OrderController@index')->name('order');
+    Route::get('/handle-order','OrderController@handle')->name('handle.order');
     Route::get('search/{keyword?}','SearchController@index')->name('search');
 });

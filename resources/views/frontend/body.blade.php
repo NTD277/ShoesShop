@@ -264,7 +264,6 @@
             <i class="fas fa-chevron-right"></i>
         </div>
     </section>
-
     <div class="category-home-mobile ">
         <div class="filter-home-mobile">
             <i class="fas fa-filter"></i> <span>Bộ lọc</span>
@@ -283,7 +282,7 @@
                 <div class="row">
                     <div class="col col-lg-12 mt-24 ">
                         <div class="home-right ">
-                            <span style="font-size: 1.3rem;font-weight:600">Tất cả sản phẩm</span>
+                            <span style="font-size: 1.3rem;font-weight:600">Tất cả sản phẩm  >>  {{$title}}</span>
                             <div class="sort-home">
                                 <div>Sắp xếp theo :
 {{--                                    <h1>{{$select}}</h1>--}}
@@ -328,6 +327,12 @@
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'downtoup','detailColor'=> $data['slugColor']])}}">Giá từ thấp đến cao</a></li>
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'AZ','detailColor'=> $data['slugColor']])}}">A-Z</a></li>
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.color',['select' => 'ZA','detailColor'=> $data['slugColor']])}}">Z-A</a></li>
+                            @elseif(!empty($data['slugSize']))
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.size',['select' => 'default','detailSize'=> $data['slugSize']])}}">Mặc định</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.size',['select' => 'uptodown','detailSize'=> $data['slugSize']])}}">Giá từ cao đến thấp</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.size',['select' => 'downtoup','detailSize'=> $data['slugSize']])}}">Giá từ thấp đến cao</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.size',['select' => 'AZ','detailSize'=> $data['slugSize']])}}">A-Z</a></li>
+                                <li class="item-sort-home"><a class="sort-link" href="{{route('fr.size',['select' => 'ZA','detailSize'=> $data['slugSize']])}}">Z-A</a></li>
                             @else
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'default'])}}">Mặc định</a></li>
                                 <li class="item-sort-home"><a class="sort-link" href="{{route('fr.home',['select' => 'uptodown'])}}">Giá từ cao đến thấp</a></li>

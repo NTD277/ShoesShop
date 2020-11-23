@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{{asset('backend/css/main.css')}}">
 </head>
 <style>
-    input{
+    input {
         display: block;
         width: 100%;
         height: 34px;
@@ -20,7 +20,8 @@
         border: 1px solid #ccc;
         border-radius: 4px;
     }
-    .btn{
+
+    .btn {
         display: inline-block;
         padding: 6px 12px;
         margin-bottom: 0;
@@ -33,12 +34,14 @@
         display: flex;
         align-items: center;
     }
-    .btn-warning{
+
+    .btn-warning {
         color: #fff;
         background-color: #f0ad4e;
         border-color: #eea236;
     }
-    .btn-success{
+
+    .btn-success {
         color: #fff;
         background-color: #5cb85c;
         border-color: #4cae4c;
@@ -53,53 +56,66 @@
                     <div class="right__title">Xem giỏ hàng</div>
                     <p class="right__desc">Tất cả sản phẩm</p>
                     <div class="right__table">
-                        <div class="right__tableWrapper">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th></th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Giá</th>
-                                    <th>Số lượng</th>
-                                    <th>Thành tiền</th>
-                                    <th>Xoá</th>
+                        <form action="{{route('fr.order')}}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('get')
+                            <div class="right__tableWrapper">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Giá</th>
+                                        <th>Số lượng</th>
+                                        <th>Thành tiền</th>
+                                        <th>Xoá</th>
 
-                                </tr>
-                                </thead>
+                                    </tr>
+                                    </thead>
 
-                                <tbody>
+                                    <tbody>
 
-                                <tr>
-                                    @foreach(session('cart') as $keys => $items)
-                                        <td data-label="STT">
-                                            <img src="{{asset('upload/image/product/' . $items->avatar)}}">
-                                        </td>
-                                        <td data-label="Tên sản phẩm">{{$items->name}}</td>
-                                        <td data-label="Giá">{{number_format($items->price)}} đ</td>
-                                        <td data-label="Số lượng">
-                                            <div class="quantity-buy">
-                                                <div class="sub btn-cart">-</div>
-                                                <input class="quantity-number" type="number" value="1" min="1" max="100">
-                                                <div class="add btn-cart">+</div>
-                                            </div>
-                                        </td>
-                                        <td class="total-item-money" data-label="Tổng tiền">{{number_format($items->price)}} đ</td>
-                                        <td data-label="Xoá" class="right__iconTable"><a href=""><img src="{{asset('backend/assets/icon-trash-black.svg')}}" alt=""></a></td>
-                                    @endforeach
-                                </tr>
-                                </tbody>
+                                    <tr>
+                                        @foreach(session('cart') as $keys => $items)
+                                            <td data-label="STT">
+                                                <img src="{{asset('upload/image/product/' . $items->avatar)}}">
+                                            </td>
+                                            <td data-label="Tên sản phẩm">{{$items->name}}</td>
+                                            <td  data-label="Giá"><input  name="price" type="hidden" value="{{($items->price)}}">{{number_format($items->price)}} đ</td>
+                                            <td data-label="Số lượng">
+                                                <div class="quantity-buy">
+
+                                                    <div class="sub btn-cart">-</div>
+                                                    <input name="qty" class="quantity-number" type="number" value="1"
+                                                           min="1" max="100">
+
+                                                    <div class="add btn-cart">+</div>
+                                                </div>
+                                            </td>
+                                            <td  class="total-item-money"
+
+                                                data-label="Tổng tiền">{{number_format($items->price)}} đ>
+                                            </td>
+                                            <td data-label="Xoá" class="right__iconTable"><a href=""><img
+                                                        src="{{asset('backend/assets/icon-trash-black.svg')}}"
+                                                        alt=""></a></td>
+                                        @endforeach
+                                    </tr>
+                                    </tbody>
 
 
-
-                            </table>
-                            <div class="footer-cart">
-                                <div class="total-order-money"><strong>{{number_format($items->price)}} đ</strong></div>
-                                <div  class="continue-shopping"><a href="/" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></div>
-                                <div  class="pay"><a href="{{route('fr.order',['id' => $items->id])}}" class="btn btn-success btn-block">Thanh toán</a></div>
+                                </table>
+                                <div class="footer-cart">
+                                    <div class="total-order-money"><strong>{{number_format($items->price)}} đ</strong>
+                                    </div>
+                                    <div class="continue-shopping"><a href="/" class="btn btn-warning"><i
+                                                class="fa fa-angle-left"></i> Tiếp tục mua hàng</a></div>
+                                    <div class="pay"><button type="submit" class="btn btn-success btn-block">Thanh toán</button></div>
+                                </div>
                             </div>
-
-                        </div>
+                        </form>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -107,38 +123,45 @@
 </div>
 
 <script>
+
     window.addEventListener("load", () => {
         @foreach(session('cart') as $keys => $items)
         const subCart = document.querySelector('.sub');
         const addCart = document.querySelector('.add');
-        const quantity =  document.querySelector('.quantity-number');
+        const quantity = document.querySelector('.quantity-number');
         const totalItemMoney = document.querySelector('.total-item-money');
         const totalOrderMoney = document.querySelector('.total-order-money');
+        var qty = 1;
 
-        var qty =1;
-        function number_format ($number , $decimals = 0 , $dec_point = '.' , $thousands_sep = ',' ) {}
+        function number_format($number, $decimals = 0, $dec_point = '.', $thousands_sep = ',') {
+        }
 
-        subCart.addEventListener('click',()=>{
-            if(quantity.value == 1){
+        subCart.addEventListener('click', () => {
+            if (quantity.value == 1) {
                 quantity.value = 1;
-            }
-            else {
+            } else {
                 qty--;
-                totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}*qty) + ' đ';
+                totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}* qty
+            )
+                +' đ';
                 totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
                 quantity.value = qty;
 
             }
         })
-        addCart.addEventListener('click',()=>{
+        addCart.addEventListener('click', () => {
             qty++;
-            totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}*qty) + ' đ';
+            totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}* qty
+        )
+            +' đ';
             totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
             quantity.value = qty;
         })
-        quantity.addEventListener("keypress",(e)=>{
-            if(e.key === 'Enter'){
-                totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}*quantity.value) + ' đ';
+        quantity.addEventListener("keypress", (e) => {
+            if (e.key === 'Enter') {
+                totalItemMoney.innerHTML = Intl.NumberFormat().format({{$items->price}}* quantity.value
+            )
+                +' đ';
                 totalOrderMoney.innerHTML = totalItemMoney.innerHTML;
 
             }
